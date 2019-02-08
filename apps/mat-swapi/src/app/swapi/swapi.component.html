@@ -1,0 +1,5 @@
+<div class="card-container">
+  <workspace-swapi-list [people]="people" (pageChange)="getPeople($event)" (selectedPerson)="selectPerson($event)">
+  </workspace-swapi-list>
+  <workspace-swapi-detail [person]="selectedPerson" [films]="films"></workspace-swapi-detail>
+</div>

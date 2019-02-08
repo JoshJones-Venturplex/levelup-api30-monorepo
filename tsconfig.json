@@ -12,7 +12,10 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@workspace/material": ["libs/material/src/index.ts"],
+      "@workspace/common-data": ["libs/common-data/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

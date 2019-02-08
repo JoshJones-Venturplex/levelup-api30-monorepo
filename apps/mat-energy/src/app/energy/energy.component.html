@@ -2,6 +2,7 @@
   <workspace-energy-list
     [drinks]="drinks"
     (drinkSelected)="selectDrink($event)"
+    (reset)="reset()"
   ></workspace-energy-list>
   <workspace-energy-detail
     [selectedDrink]="selectedDrink"

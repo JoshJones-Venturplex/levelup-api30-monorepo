@@ -8,6 +8,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class EnergyListComponent implements OnInit {
   @Input() drinks: any[];
   @Output() drinkSelected: EventEmitter<any> = new EventEmitter;
+  @Output() reset:EventEmitter<any> = new EventEmitter;
 
   constructor() { }
 

@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <mat-list class="drink-list">
-      <button mat-raised-button class="drink-button" color="primary" (click)="selectDrink(drink)">
+      <button mat-raised-button class="drink-button" color="primary" (click)="reset.emit()">
         Add New Drink
       </button>
       <mat-list-item *ngFor="let drink of drinks">

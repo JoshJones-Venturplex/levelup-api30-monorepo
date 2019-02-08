@@ -19,6 +19,12 @@
     },
     "common-data": {
       "tags": []
+    },
+    "mat-energy": {
+      "tags": []
+    },
+    "mat-energy-e2e": {
+      "tags": []
     }
   }
 }

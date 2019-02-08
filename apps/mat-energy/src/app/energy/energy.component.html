@@ -1,0 +1,12 @@
+<div class="card-container">
+  <workspace-energy-list
+    [drinks]="drinks"
+    (drinkSelected)="selectDrink($event)"
+  ></workspace-energy-list>
+  <workspace-energy-detail
+    [selectedDrink]="selectedDrink"
+    (saved)="saveDrink($event)"
+    (canceled)="reset()"
+    (deleted)="deleteDrink($event)"
+  ></workspace-energy-detail>
+</div>

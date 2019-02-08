@@ -1,0 +1,17 @@
+<mat-card class="master-card">
+  <mat-card-header>
+    <mat-card-title> Energy Drinks </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="drink-list">
+      <button mat-raised-button class="drink-button" color="primary" (click)="selectDrink(drink)">
+        Add New Drink
+      </button>
+      <mat-list-item *ngFor="let drink of drinks">
+        <button mat-button class="drink-button" (click)="selectDrink(drink)">
+          {{ drink.name }}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

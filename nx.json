@@ -25,6 +25,12 @@
     },
     "mat-energy-e2e": {
       "tags": []
+    },
+    "mat-pizza": {
+      "tags": []
+    },
+    "mat-pizza-e2e": {
+      "tags": []
     }
   }
 }

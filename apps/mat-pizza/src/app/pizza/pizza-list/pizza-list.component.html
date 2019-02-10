@@ -1,0 +1,18 @@
+<mat-card class="master-card">
+    <mat-card-header>
+      <mat-card-title> Pizzas </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list class="pizza-list">
+        <button mat-raised-button class="list-button" color="primary" (click)="reset.emit()">
+          Add New Pizza
+        </button>
+        <mat-list-item *ngFor="let pizza of pizzas">
+          <button mat-button class="list-button" (click)="selectPizza(pizza)">
+            {{ pizza.name }}
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  

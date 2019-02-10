@@ -1,0 +1,13 @@
+<div class="card-container">
+  <workspace-pizza-list
+    [pizzas]="pizzas"
+    (pizzaSelected)="selectPizza($event)"
+    (reset)="reset()"
+  ></workspace-pizza-list>
+  <workspace-pizza-detail
+    [selectedPizza]="selectedPizza"
+    (saved)="savePizza($event)"
+    (canceled)="reset()"
+    (deleted)="deletePizza($event)"
+  ></workspace-pizza-detail>
+</div>

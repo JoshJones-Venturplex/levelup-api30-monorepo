@@ -1,0 +1,17 @@
+.detail-card {
+    margin: 20px;
+    height: 340px;
+    width: 400px;
+}
+
+.pizza-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}

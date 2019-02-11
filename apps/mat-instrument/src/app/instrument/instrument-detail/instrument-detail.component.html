@@ -1,0 +1,32 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title
+      >{{ selectedInstrument?.name || 'Create Instrument' }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ selectedInstrument?.id || 'N/A' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="instrumentForm" class="instrument-form">
+      <mat-form-field>
+        <input matInput placeholder="Instrument Name" formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Year" formControlName="year" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Inventor" formControlName="inventor" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Country" formControlName="country" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="start" class="detail-actions">
+    <button mat-button (click)="saveInstrument()">Save</button>
+    <button mat-button (click)="canceled.emit()">Cancel</button>
+    <button mat-button (click)="deleted.emit(selectedInstrument.id)">Delete</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,13 @@
+<div class="card-container">
+  <workspace-instrument-list
+    [instruments]="instruments"
+    (instrumentSelected)="selectInstrument($event)"
+    (reset)="reset()"
+  ></workspace-instrument-list>
+  <workspace-instrument-detail
+    [selectedInstrument]="selectedInstrument"
+    (saved)="saveInstrument($event)"
+    (canceled)="reset()"
+    (deleted)="deleteInstrument($event)"
+  ></workspace-instrument-detail>
+</div>

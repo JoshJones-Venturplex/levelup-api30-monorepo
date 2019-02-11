@@ -83,9 +83,7 @@
               "apps/mat-swapi/tsconfig.app.json",
               "apps/mat-swapi/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -119,9 +117,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/mat-swapi-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -139,9 +135,7 @@
               "libs/material/tsconfig.lib.json",
               "libs/material/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -172,9 +166,7 @@
               "libs/common-data/tsconfig.lib.json",
               "libs/common-data/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -215,9 +207,7 @@
               "apps/mat-energy/src/favicon.ico",
               "apps/mat-energy/src/assets"
             ],
-            "styles": [
-              "apps/mat-energy/src/styles.scss"
-            ],
+            "styles": ["apps/mat-energy/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -271,9 +261,7 @@
             "polyfills": "apps/mat-energy/src/polyfills.ts",
             "tsConfig": "apps/mat-energy/tsconfig.spec.json",
             "karmaConfig": "apps/mat-energy/karma.conf.js",
-            "styles": [
-              "apps/mat-energy/src/styles.scss"
-            ],
+            "styles": ["apps/mat-energy/src/styles.scss"],
             "scripts": [],
             "assets": [
               "apps/mat-energy/src/favicon.ico",
@@ -288,9 +276,7 @@
               "apps/mat-energy/tsconfig.app.json",
               "apps/mat-energy/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -316,9 +302,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/mat-energy-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -403,9 +387,7 @@
               "apps/mat-pizza/tsconfig.app.json",
               "apps/mat-pizza/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -439,9 +421,123 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/mat-pizza-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-instrument": {
+      "root": "apps/mat-instrument/",
+      "sourceRoot": "apps/mat-instrument/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-instrument",
+            "index": "apps/mat-instrument/src/index.html",
+            "main": "apps/mat-instrument/src/main.ts",
+            "polyfills": "apps/mat-instrument/src/polyfills.ts",
+            "tsConfig": "apps/mat-instrument/tsconfig.app.json",
+            "assets": [
+              "apps/mat-instrument/src/favicon.ico",
+              "apps/mat-instrument/src/assets"
+            ],
+            "styles": ["apps/mat-instrument/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-instrument/src/environments/environment.ts",
+                  "with": "apps/mat-instrument/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-instrument:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-instrument:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-instrument:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-instrument/tsconfig.app.json",
+              "apps/mat-instrument/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mat-instrument/jest.config.js",
+            "tsConfig": "apps/mat-instrument/tsconfig.spec.json",
+            "setupFile": "apps/mat-instrument/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mat-instrument-e2e": {
+      "root": "apps/mat-instrument-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-instrument-e2e/protractor.conf.js",
+            "devServerTarget": "mat-instrument:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-instrument:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-instrument-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

@@ -31,6 +31,12 @@
     },
     "mat-pizza-e2e": {
       "tags": []
+    },
+    "mat-instrument": {
+      "tags": []
+    },
+    "mat-instrument-e2e": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,22 @@
+<mat-card class="list-card">
+  <mat-card-header>
+    <mat-card-title> Games </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="game-list">
+      <button
+        mat-raised-button
+        class="list-button"
+        color="primary"
+        (click)="reset.emit()"
+      >
+        Add New Game
+      </button>
+      <mat-list-item *ngFor="let game of games">
+        <button mat-button class="list-button" (click)="selectGame(game)">
+          {{ game.name }}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

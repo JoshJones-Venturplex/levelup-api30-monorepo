@@ -1,0 +1,34 @@
+<mat-card class="detail-card">
+    <mat-card-header>
+      <mat-card-title
+        >{{ selectedGame?.name || 'Add Game' }}
+      </mat-card-title>
+      <mat-card-subtitle>{{ selectedGame?.id || 'N/A' }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="gameForm" class="detail-form">
+        <mat-form-field>
+          <input matInput placeholder="Game Title" formControlName="name" />
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput placeholder="Publisher" formControlName="publisher" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput
+                   formControlName="released"
+                   [matDatepicker]="datePickerRef"
+                   placeholder="Release Date">
+                   <mat-datepicker-toggle matSuffix [for]="datePickerRef"></mat-datepicker-toggle>
+        </mat-form-field>
+        <mat-datepicker #datePickerRef></mat-datepicker>
+      </form>
+    </mat-card-content>
+    <mat-card-actions align="start" class="detail-actions">
+      <button mat-button (click)="saveGame()">Save</button>
+      <button mat-button (click)="cancel()">Cancel</button>
+      <button mat-button (click)="deleted.emit(selectedGame)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+  

@@ -1,0 +1,15 @@
+<div class="card-container">
+  <workspace-game-list
+    [games]="games"
+    (gameSelected)="selectGame($event)"
+    (reset)="reset()"
+  >
+  </workspace-game-list>
+  <workspace-game-detail
+    [selectedGame]="selectedGame"
+    (saved)="saveGame($event)"
+    (canceled)="reset()"
+    (deleted)="deleteGame($event)"
+  >
+  </workspace-game-detail>
+</div>

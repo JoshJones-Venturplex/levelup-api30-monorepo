@@ -43,6 +43,12 @@
     },
     "mat-todo-e2e": {
       "tags": []
+    },
+    "mat-game": {
+      "tags": []
+    },
+    "mat-game-e2e": {
+      "tags": []
     }
   }
 }

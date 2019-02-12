@@ -657,6 +657,122 @@
           }
         }
       }
+    },
+    "mat-game": {
+      "root": "apps/mat-game/",
+      "sourceRoot": "apps/mat-game/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-game",
+            "index": "apps/mat-game/src/index.html",
+            "main": "apps/mat-game/src/main.ts",
+            "polyfills": "apps/mat-game/src/polyfills.ts",
+            "tsConfig": "apps/mat-game/tsconfig.app.json",
+            "assets": [
+              "apps/mat-game/src/favicon.ico",
+              "apps/mat-game/src/assets"
+            ],
+            "styles": ["apps/mat-game/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-game/src/environments/environment.ts",
+                  "with": "apps/mat-game/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-game:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-game:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-game:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-game/tsconfig.app.json",
+              "apps/mat-game/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mat-game/jest.config.js",
+            "tsConfig": "apps/mat-game/tsconfig.spec.json",
+            "setupFile": "apps/mat-game/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mat-game-e2e": {
+      "root": "apps/mat-game-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-game-e2e/protractor.conf.js",
+            "devServerTarget": "mat-game:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-game:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-game-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

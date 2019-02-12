@@ -37,4 +37,9 @@ export class TodoDetailComponent implements OnChanges {
       id: this.selectedTodo ? this.selectedTodo.id : null
     });
   }
+
+  cancel() {
+    this.todoForm.reset();
+    this.canceled.emit()
+  }
 }

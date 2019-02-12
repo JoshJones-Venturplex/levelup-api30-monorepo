@@ -26,7 +26,7 @@
   </mat-card-content>
   <mat-card-actions align="start" class="detail-actions">
     <button mat-button (click)="saveInstrument()">Save</button>
-    <button mat-button (click)="canceled.emit()">Cancel</button>
+    <button mat-button (click)="cancel()">Cancel</button>
     <button mat-button (click)="deleted.emit(selectedInstrument.id)">Delete</button>
   </mat-card-actions>
 </mat-card>

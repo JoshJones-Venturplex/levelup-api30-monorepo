@@ -32,4 +32,9 @@ export class InstrumentDetailComponent implements OnChanges {
     })
   }
 
+  cancel() {
+    this.instrumentForm.reset();
+    this.canceled.emit()
+  }
+
 }

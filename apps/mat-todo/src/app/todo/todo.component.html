@@ -1,0 +1,15 @@
+<div class="card-container">
+  <workspace-todo-list
+    [todos]="todos"
+    (todoSelected)="selectTodo($event)"
+    (reset)="reset()"
+  >
+  </workspace-todo-list>
+  <workspace-todo-detail
+    [selectedTodo]="selectedTodo"
+    (saved)="saveTodo($event)"
+    (canceled)="reset()"
+    (deleted)="deleteTodo($event)"
+  >
+  </workspace-todo-detail>
+</div>

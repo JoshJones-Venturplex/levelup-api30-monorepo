@@ -1,0 +1,22 @@
+<mat-card class="master-card">
+  <mat-card-header>
+    <mat-card-title> Todo Items </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="todo-list">
+      <button
+        mat-raised-button
+        class="todo-button"
+        color="primary"
+        (click)="reset.emit()"
+      >
+        Add New Todo Item
+      </button>
+      <mat-list-item *ngFor="let todo of todos">
+        <button mat-button class="todo-button" (click)="selectTodo(todo)">
+          {{ todo.title }}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -541,6 +541,122 @@
           }
         }
       }
+    },
+    "mat-todo": {
+      "root": "apps/mat-todo/",
+      "sourceRoot": "apps/mat-todo/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-todo",
+            "index": "apps/mat-todo/src/index.html",
+            "main": "apps/mat-todo/src/main.ts",
+            "polyfills": "apps/mat-todo/src/polyfills.ts",
+            "tsConfig": "apps/mat-todo/tsconfig.app.json",
+            "assets": [
+              "apps/mat-todo/src/favicon.ico",
+              "apps/mat-todo/src/assets"
+            ],
+            "styles": ["apps/mat-todo/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-todo/src/environments/environment.ts",
+                  "with": "apps/mat-todo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-todo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-todo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-todo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-todo/tsconfig.app.json",
+              "apps/mat-todo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mat-todo/jest.config.js",
+            "tsConfig": "apps/mat-todo/tsconfig.spec.json",
+            "setupFile": "apps/mat-todo/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mat-todo-e2e": {
+      "root": "apps/mat-todo-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-todo-e2e/protractor.conf.js",
+            "devServerTarget": "mat-todo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-todo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-todo-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

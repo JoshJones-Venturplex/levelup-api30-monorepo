@@ -37,6 +37,12 @@
     },
     "mat-instrument-e2e": {
       "tags": []
+    },
+    "mat-todo": {
+      "tags": []
+    },
+    "mat-todo-e2e": {
+      "tags": []
     }
   }
 }

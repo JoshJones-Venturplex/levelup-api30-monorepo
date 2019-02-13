@@ -49,6 +49,12 @@
     },
     "mat-game-e2e": {
       "tags": []
+    },
+    "mat-soda": {
+      "tags": []
+    },
+    "mat-soda-e2e": {
+      "tags": []
     }
   }
 }

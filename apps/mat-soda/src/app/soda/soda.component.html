@@ -1,0 +1,16 @@
+<div class="card-container">
+    <workspace-soda-list
+      [sodas]="sodas"
+      (sodaSelected)="selectSoda($event)"
+      (reset)="reset()"
+    >
+    </workspace-soda-list>
+    <workspace-soda-detail
+      [selectedSoda]="selectedSoda"
+      (saved)="saveSoda($event)"
+      (canceled)="reset()"
+      (deleted)="deleteSoda($event)"
+    >
+    </workspace-soda-detail>
+  </div>
+  

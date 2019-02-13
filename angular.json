@@ -773,6 +773,122 @@
           }
         }
       }
+    },
+    "mat-soda": {
+      "root": "apps/mat-soda/",
+      "sourceRoot": "apps/mat-soda/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-soda",
+            "index": "apps/mat-soda/src/index.html",
+            "main": "apps/mat-soda/src/main.ts",
+            "polyfills": "apps/mat-soda/src/polyfills.ts",
+            "tsConfig": "apps/mat-soda/tsconfig.app.json",
+            "assets": [
+              "apps/mat-soda/src/favicon.ico",
+              "apps/mat-soda/src/assets"
+            ],
+            "styles": ["apps/mat-soda/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-soda/src/environments/environment.ts",
+                  "with": "apps/mat-soda/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-soda:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-soda:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-soda:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-soda/tsconfig.app.json",
+              "apps/mat-soda/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mat-soda/jest.config.js",
+            "tsConfig": "apps/mat-soda/tsconfig.spec.json",
+            "setupFile": "apps/mat-soda/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mat-soda-e2e": {
+      "root": "apps/mat-soda-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-soda-e2e/protractor.conf.js",
+            "devServerTarget": "mat-soda:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-soda:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-soda-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

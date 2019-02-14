@@ -55,6 +55,12 @@
     },
     "mat-soda-e2e": {
       "tags": []
+    },
+    "mat-animal": {
+      "tags": []
+    },
+    "mat-animal-e2e": {
+      "tags": []
     }
   }
 }

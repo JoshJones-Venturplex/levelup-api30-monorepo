@@ -889,6 +889,122 @@
           }
         }
       }
+    },
+    "mat-animal": {
+      "root": "apps/mat-animal/",
+      "sourceRoot": "apps/mat-animal/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-animal",
+            "index": "apps/mat-animal/src/index.html",
+            "main": "apps/mat-animal/src/main.ts",
+            "polyfills": "apps/mat-animal/src/polyfills.ts",
+            "tsConfig": "apps/mat-animal/tsconfig.app.json",
+            "assets": [
+              "apps/mat-animal/src/favicon.ico",
+              "apps/mat-animal/src/assets"
+            ],
+            "styles": ["apps/mat-animal/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-animal/src/environments/environment.ts",
+                  "with": "apps/mat-animal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-animal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-animal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-animal:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-animal/tsconfig.app.json",
+              "apps/mat-animal/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/mat-animal/jest.config.js",
+            "tsConfig": "apps/mat-animal/tsconfig.spec.json",
+            "setupFile": "apps/mat-animal/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "mat-animal-e2e": {
+      "root": "apps/mat-animal-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-animal-e2e/protractor.conf.js",
+            "devServerTarget": "mat-animal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-animal:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-animal-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,32 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title
+      >{{ selectedAnimal?.name || 'Add Animal' }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ selectedAnimal?.id || 'N/A' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="animalForm" class="detail-form">
+      <mat-form-field>
+        <input matInput placeholder="Animal Name" formControlName="name" />
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput placeholder="Height" formControlName="height" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Mass" formControlName="mass" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Continent" formControlName="continent" />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="start" class="detail-actions">
+    <button mat-button (click)="saveAnimal()">Save</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button (click)="deleted.emit(selectedAnimal)">Delete</button>
+  </mat-card-actions>
+</mat-card>

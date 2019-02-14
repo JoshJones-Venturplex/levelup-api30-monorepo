@@ -1,0 +1,15 @@
+<div class="card-container">
+  <workspace-animal-list
+    [animals]="animals"
+    (animalSelected)="selectAnimal($event)"
+    (reset)="reset()"
+  >
+  </workspace-animal-list>
+  <workspace-animal-detail
+    [selectedAnimal]="selectedAnimal"
+    (saved)="saveAnimal($event)"
+    (canceled)="reset()"
+    (deleted)="deleteAnimal($event)"
+  >
+  </workspace-animal-detail>
+</div>

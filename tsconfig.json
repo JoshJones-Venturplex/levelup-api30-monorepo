@@ -14,7 +14,8 @@
     "baseUrl": ".",
     "paths": {
       "@workspace/material": ["libs/material/src/index.ts"],
-      "@workspace/common-data": ["libs/common-data/src/index.ts"]
+      "@workspace/common-data": ["libs/common-data/src/index.ts"],
+      "@workspace/core-data": ["libs/core-data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

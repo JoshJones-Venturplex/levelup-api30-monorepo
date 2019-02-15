@@ -1,0 +1,15 @@
+<div class="card-container">
+  <workspace-fruit-list
+    [fruits]="fruits"
+    (fruitSelected)="selectFruit($event)"
+    (reset)="reset()"
+  >
+  </workspace-fruit-list>
+  <workspace-fruit-detail
+    [selectedFruit]="selectedFruit"
+    (saved)="saveFruit($event)"
+    (canceled)="reset()"
+    (deleted)="deleteFruit($event)"
+  >
+  </workspace-fruit-detail>
+</div>

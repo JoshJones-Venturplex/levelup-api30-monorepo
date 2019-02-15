@@ -1005,6 +1005,160 @@
           }
         }
       }
+    },
+    "core-data": {
+      "root": "libs/core-data",
+      "sourceRoot": "libs/core-data/src",
+      "projectType": "library",
+      "prefix": "workspace",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/core-data/src/test.ts",
+            "tsConfig": "libs/core-data/tsconfig.spec.json",
+            "karmaConfig": "libs/core-data/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core-data/tsconfig.lib.json",
+              "libs/core-data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "mat-fruit": {
+      "root": "apps/mat-fruit/",
+      "sourceRoot": "apps/mat-fruit/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-fruit",
+            "index": "apps/mat-fruit/src/index.html",
+            "main": "apps/mat-fruit/src/main.ts",
+            "polyfills": "apps/mat-fruit/src/polyfills.ts",
+            "tsConfig": "apps/mat-fruit/tsconfig.app.json",
+            "assets": [
+              "apps/mat-fruit/src/favicon.ico",
+              "apps/mat-fruit/src/assets"
+            ],
+            "styles": ["apps/mat-fruit/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-fruit/src/environments/environment.ts",
+                  "with": "apps/mat-fruit/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-fruit:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-fruit:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-fruit:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-fruit/src/test.ts",
+            "polyfills": "apps/mat-fruit/src/polyfills.ts",
+            "tsConfig": "apps/mat-fruit/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-fruit/karma.conf.js",
+            "styles": ["apps/mat-fruit/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-fruit/src/favicon.ico",
+              "apps/mat-fruit/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-fruit/tsconfig.app.json",
+              "apps/mat-fruit/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-fruit-e2e": {
+      "root": "apps/mat-fruit-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-fruit-e2e/protractor.conf.js",
+            "devServerTarget": "mat-fruit:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-fruit:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-fruit-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

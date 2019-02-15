@@ -1,0 +1,36 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title
+      >{{ selectedFruit?.name || 'Add Fruit' }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ selectedFruit?.id || 'N/A' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="fruitForm" class="detail-form">
+      <mat-form-field>
+        <input matInput placeholder="Fruit Name" formControlName="name" />
+        <mat-error *ngIf="formFieldValidator('name')">{{ fruitFormErrors.name }}</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput placeholder="Calories" formControlName="calories" />
+        <mat-error *ngIf="formFieldValidator('calories')">{{ fruitFormErrors.calories }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Carbohydrates" formControlName="carbohydrates" />
+        <mat-error *ngIf="formFieldValidator('carbohydrates')">{{ fruitFormErrors.carbohydrates }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Sugar" formControlName="sugar" />
+        <mat-error *ngIf="formFieldValidator('sugar')">{{ fruitFormErrors.sugar }}</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="start" class="detail-actions">
+    <button mat-button (click)="saveFruit()" [disabled]="!fruitForm.valid">Save</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button (click)="deleted.emit(selectedFruit)">Delete</button>
+  </mat-card-actions>
+</mat-card>

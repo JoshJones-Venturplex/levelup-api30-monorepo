@@ -4,21 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from '@workspace/material'
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '@workspace/material'; 
 import { HomeComponent } from './home/home.component';
-import { AnimalComponent } from './animal/animal.component';
-import { AnimalListComponent } from './animal/animal-list/animal-list.component';
-import { AnimalDetailComponent } from './animal/animal-detail/animal-detail.component';
+import { FruitComponent } from './fruit/fruit.component';
+import { FruitListComponent } from './fruit/fruit-list/fruit-list.component';
+import { FruitDetailComponent } from './fruit/fruit-detail/fruit-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    HomeComponent, 
-    AnimalComponent, 
-    AnimalListComponent, 
-    AnimalDetailComponent
+    AppComponent,
+    HomeComponent,
+    FruitComponent, 
+    FruitListComponent, 
+    FruitDetailComponent
   ],
   imports: [
     BrowserModule,

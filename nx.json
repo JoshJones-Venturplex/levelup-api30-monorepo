@@ -61,6 +61,15 @@
     },
     "mat-animal-e2e": {
       "tags": []
+    },
+    "core-data": {
+      "tags": []
+    },
+    "mat-fruit": {
+      "tags": []
+    },
+    "mat-fruit-e2e": {
+      "tags": []
     }
   }
 }

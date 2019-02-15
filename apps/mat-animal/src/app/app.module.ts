@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
-import { MaterialModule } from 'libs/material/src/lib/material.module'
+import { MaterialModule } from '@workspace/material'
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';

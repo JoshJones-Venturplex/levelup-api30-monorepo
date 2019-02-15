@@ -9,23 +9,27 @@
     <form [formGroup]="animalForm" class="detail-form">
       <mat-form-field>
         <input matInput placeholder="Animal Name" formControlName="name" />
+        <mat-error *ngIf="formFieldValidator('name')">{{ animalFormErrors.name }}</mat-error>
       </mat-form-field>
       
       <mat-form-field>
         <input matInput placeholder="Height" formControlName="height" />
+        <mat-error *ngIf="formFieldValidator('height')">{{ animalFormErrors.height }}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <input matInput placeholder="Mass" formControlName="mass" />
+        <mat-error *ngIf="formFieldValidator('mass')">{{ animalFormErrors.mass }}</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <input matInput placeholder="Continent" formControlName="continent" />
+        <mat-error *ngIf="formFieldValidator('continent')">{{ animalFormErrors.continent }}</mat-error>
       </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions align="start" class="detail-actions">
-    <button mat-button (click)="saveAnimal()">Save</button>
+    <button mat-button (click)="saveAnimal()" [disabled]="!animalForm.valid">Save</button>
     <button mat-button (click)="cancel()">Cancel</button>
     <button mat-button (click)="deleted.emit(selectedAnimal)">Delete</button>
   </mat-card-actions>

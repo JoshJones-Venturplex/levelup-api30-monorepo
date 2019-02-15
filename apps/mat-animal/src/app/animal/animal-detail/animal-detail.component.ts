@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Animal } from '../../shared/animal';
 
 @Component({
@@ -15,15 +15,26 @@ export class AnimalDetailComponent implements OnChanges {
 
   animalForm: FormGroup;
 
+  animalFormErrors = {
+    name: 'Name is required',
+    height: 'Height is required',
+    mass: 'Mass is required',
+    continent: 'Continent is required'
+  }
+
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnChanges() {
     this.animalForm = this.formBuilder.group({
-      name: [this.selectedAnimal ? this.selectedAnimal.name : ''],
-      mass: [this.selectedAnimal ? this.selectedAnimal.mass : ''],
-      height: [this.selectedAnimal ? this.selectedAnimal.height : ''],
-      continent: [this.selectedAnimal ? this.selectedAnimal.continent : '']
+      name: [this.selectedAnimal ? this.selectedAnimal.name : '', Validators.required],
+      mass: [this.selectedAnimal ? this.selectedAnimal.mass : '', Validators.required],
+      height: [this.selectedAnimal ? this.selectedAnimal.height : '', Validators.required],
+      continent: [this.selectedAnimal ? this.selectedAnimal.continent : '', Validators.required]
     });
+  }
+
+  formFieldValidator(formControlName) {
+    return this.animalForm.controls[formControlName].touched && !this.animalForm.controls[formControlName].valid;
   }
 
   saveAnimal() {

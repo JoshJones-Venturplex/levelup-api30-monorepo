@@ -1,0 +1,22 @@
+<mat-card class="list-card">
+  <mat-card-header>
+    <mat-card-title> Players </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="player-list">
+      <button
+        mat-raised-button
+        class="list-button"
+        color="primary"
+        (click)="reset.emit()"
+      >
+        Add New Player
+      </button>
+      <mat-list-item *ngFor="let player of players">
+        <button mat-button class="list-button" (click)="selectPlayer(player)">
+          {{ player.name }}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

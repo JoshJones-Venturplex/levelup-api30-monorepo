@@ -1,0 +1,16 @@
+.detail-card {
+    margin: 20px;
+    width: 400px;
+}
+
+.detail-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}

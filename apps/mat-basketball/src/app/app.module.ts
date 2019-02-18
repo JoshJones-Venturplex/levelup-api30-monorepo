@@ -6,26 +6,22 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@workspace/material';
 import { AppRoutingModule } from './app-routing.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { AnimalComponent } from './animal/animal.component';
-import { AnimalListComponent } from './animal/animal-list/animal-list.component';
-import { AnimalDetailComponent } from './animal/animal-detail/animal-detail.component';
+import { PlayersComponent } from './players/players.component';
+import { PlayerListComponent } from './players/player-list/player-list.component';
+import { PlayerDetailComponent } from './players/player-detail/player-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreStateModule } from '@workspace/core-state';
 
 @NgModule({
-  declarations: [
-    AppComponent, 
-    HomeComponent, 
-    AnimalComponent, 
-    AnimalListComponent, 
-    AnimalDetailComponent
-  ],
+  declarations: [AppComponent, HomeComponent, PlayersComponent, PlayerListComponent, PlayerDetailComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    CoreStateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

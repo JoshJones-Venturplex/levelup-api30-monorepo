@@ -1159,6 +1159,160 @@
           }
         }
       }
+    },
+    "mat-basketball": {
+      "root": "apps/mat-basketball/",
+      "sourceRoot": "apps/mat-basketball/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-basketball",
+            "index": "apps/mat-basketball/src/index.html",
+            "main": "apps/mat-basketball/src/main.ts",
+            "polyfills": "apps/mat-basketball/src/polyfills.ts",
+            "tsConfig": "apps/mat-basketball/tsconfig.app.json",
+            "assets": [
+              "apps/mat-basketball/src/favicon.ico",
+              "apps/mat-basketball/src/assets"
+            ],
+            "styles": ["apps/mat-basketball/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-basketball/src/environments/environment.ts",
+                  "with": "apps/mat-basketball/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-basketball:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-basketball:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-basketball:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-basketball/src/test.ts",
+            "polyfills": "apps/mat-basketball/src/polyfills.ts",
+            "tsConfig": "apps/mat-basketball/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-basketball/karma.conf.js",
+            "styles": ["apps/mat-basketball/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-basketball/src/favicon.ico",
+              "apps/mat-basketball/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-basketball/tsconfig.app.json",
+              "apps/mat-basketball/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-basketball-e2e": {
+      "root": "apps/mat-basketball-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-basketball-e2e/protractor.conf.js",
+            "devServerTarget": "mat-basketball:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-basketball:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-basketball-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "core-state": {
+      "root": "libs/core-state",
+      "sourceRoot": "libs/core-state/src",
+      "projectType": "library",
+      "prefix": "workspace",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/core-state/src/test.ts",
+            "tsConfig": "libs/core-state/tsconfig.spec.json",
+            "karmaConfig": "libs/core-state/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core-state/tsconfig.lib.json",
+              "libs/core-state/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

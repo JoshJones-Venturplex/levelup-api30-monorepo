@@ -70,6 +70,15 @@
     },
     "mat-fruit-e2e": {
       "tags": []
+    },
+    "mat-basketball": {
+      "tags": []
+    },
+    "mat-basketball-e2e": {
+      "tags": []
+    },
+    "core-state": {
+      "tags": []
     }
   }
 }

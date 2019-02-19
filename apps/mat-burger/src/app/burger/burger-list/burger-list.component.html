@@ -1,0 +1,22 @@
+<mat-card class="list-card">
+  <mat-card-header>
+    <mat-card-title> Burgers </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list class="burger-list">
+      <button
+        mat-raised-button
+        class="list-button"
+        color="primary"
+        (click)="reset.emit()"
+      >
+        Add New Burger
+      </button>
+      <mat-list-item *ngFor="let burger of burgers">
+        <button mat-button class="list-button" (click)="selectBurger(burger)">
+          {{ burger.name }}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

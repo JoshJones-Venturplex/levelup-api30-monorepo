@@ -79,6 +79,12 @@
     },
     "core-state": {
       "tags": []
+    },
+    "mat-burger": {
+      "tags": []
+    },
+    "mat-burger-e2e": {
+      "tags": []
     }
   }
 }

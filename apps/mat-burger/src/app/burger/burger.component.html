@@ -1,0 +1,15 @@
+<div class="card-container">
+  <workspace-burger-list
+    [burgers]="burgers$ | async"
+    (burgerSelected)="selectBurger($event)"
+    (reset)="resetCurrentBurger()"
+  >
+  </workspace-burger-list>
+  <workspace-burger-detail
+    [selectedBurger]="currentBurger$ | async"
+    (saved)="saveBurger($event)"
+    (canceled)="resetCurrentBurger()"
+    (deleted)="deleteBurger($event)"
+  >
+  </workspace-burger-detail>
+</div>

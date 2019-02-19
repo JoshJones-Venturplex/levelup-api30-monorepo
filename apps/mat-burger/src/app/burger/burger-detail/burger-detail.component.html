@@ -1,0 +1,36 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title
+      >{{ selectedBurger?.name || 'Add Burger' }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ selectedBurger?.id || 'N/A' }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="burgerForm" class="detail-form">
+      <mat-form-field>
+        <input matInput placeholder="Burger Name" formControlName="name" />
+        <mat-error *ngIf="formFieldValidator('name')">{{ burgerFormErrors.name }}</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput placeholder="Calories" formControlName="calories" />
+        <mat-error *ngIf="formFieldValidator('calories')">{{ burgerFormErrors.calories }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Protein" formControlName="protein" />
+        <mat-error *ngIf="formFieldValidator('protein')">{{ burgerFormErrors.protein }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Carbs" formControlName="carbs" />
+        <mat-error *ngIf="formFieldValidator('carbs')">{{ burgerFormErrors.carbs }}</mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="start" class="detail-actions">
+    <button mat-button (click)="saveBurger()" [disabled]="!burgerForm.valid">Save</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button (click)="deleted.emit(selectedBurger)">Delete</button>
+  </mat-card-actions>
+</mat-card>

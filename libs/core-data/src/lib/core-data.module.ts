@@ -4,6 +4,8 @@ import { FruitService } from './fruit.service';
 import { Fruit } from './interfaces/fruit';
 import { Player } from './interfaces/player';
 import { PlayerService } from './services/player.service';
+import { Burger } from './interfaces/burger';
+import { BurgerService } from './services/burger.service';
 
 @NgModule({
   imports: [CommonModule],

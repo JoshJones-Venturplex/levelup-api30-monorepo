@@ -1436,6 +1436,129 @@
           }
         }
       }
+    },
+    "mat-cheese": {
+      "root": "apps/mat-cheese/",
+      "sourceRoot": "apps/mat-cheese/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-cheese",
+            "index": "apps/mat-cheese/src/index.html",
+            "main": "apps/mat-cheese/src/main.ts",
+            "polyfills": "apps/mat-cheese/src/polyfills.ts",
+            "tsConfig": "apps/mat-cheese/tsconfig.app.json",
+            "assets": [
+              "apps/mat-cheese/src/favicon.ico",
+              "apps/mat-cheese/src/assets"
+            ],
+            "styles": ["apps/mat-cheese/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-cheese/src/environments/environment.ts",
+                  "with": "apps/mat-cheese/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-cheese:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-cheese:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-cheese:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-cheese/src/test.ts",
+            "polyfills": "apps/mat-cheese/src/polyfills.ts",
+            "tsConfig": "apps/mat-cheese/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-cheese/karma.conf.js",
+            "styles": ["apps/mat-cheese/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-cheese/src/favicon.ico",
+              "apps/mat-cheese/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-cheese/tsconfig.app.json",
+              "apps/mat-cheese/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-cheese-e2e": {
+      "root": "apps/mat-cheese-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-cheese-e2e/protractor.conf.js",
+            "devServerTarget": "mat-cheese:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-cheese:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-cheese-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

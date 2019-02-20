@@ -5,3 +5,5 @@ export { Player } from './lib/interfaces/player';
 export { PlayerService } from './lib/services/player.service';
 export { Burger } from './lib/interfaces/burger';
 export { BurgerService } from './lib/services/burger.service';
+export { Cheese } from './lib/interfaces/cheese';
+export { CheeseService } from './lib/services/cheese.service';

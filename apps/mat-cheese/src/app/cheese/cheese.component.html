@@ -1,0 +1,16 @@
+<div class="card-container">
+  <workspace-cheese-list
+    [cheeses]="cheeses$ | async"
+    (cheeseSelected)="selectCheese($event)"
+    (reset)="resetCurrentCheese()"
+  >
+  </workspace-cheese-list>
+  <workspace-cheese-detail
+    [selectedCheese]="currentCheese$ | async"
+    (saved)="saveCheese($event)"
+    (canceled)="resetCurrentCheese()"
+    (deleted)="deleteCheese($event)"
+  >
+  </workspace-cheese-detail>
+</div>
+

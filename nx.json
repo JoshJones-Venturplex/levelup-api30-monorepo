@@ -85,6 +85,12 @@
     },
     "mat-burger-e2e": {
       "tags": []
+    },
+    "mat-cheese": {
+      "tags": []
+    },
+    "mat-cheese-e2e": {
+      "tags": []
     }
   }
 }

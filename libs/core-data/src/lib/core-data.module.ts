@@ -8,7 +8,8 @@ import { Burger } from './interfaces/burger';
 import { BurgerService } from './services/burger.service';
 import { Cheese } from './interfaces/cheese';
 import { CheeseService } from './services/cheese.service';
-
+import { Taco } from './interfaces/taco';
+import { TacoService } from './services/taco.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

@@ -91,6 +91,12 @@
     },
     "mat-cheese-e2e": {
       "tags": []
+    },
+    "mat-taco": {
+      "tags": []
+    },
+    "mat-taco-e2e": {
+      "tags": []
     }
   }
 }

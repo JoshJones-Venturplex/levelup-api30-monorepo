@@ -1,0 +1,15 @@
+<div class="card-container">
+  <workspace-taco-list
+    [tacos]="tacos$ | async"
+    (tacoSelected)="selectTaco($event)"
+    (reset)="resetCurrentTaco()"
+  >
+  </workspace-taco-list>
+  <workspace-taco-detail
+    [selectedTaco]="currentTaco$ | async"
+    (saved)="saveTaco($event)"
+    (canceled)="resetCurrentTaco()"
+    (deleted)="deleteTaco($event)"
+  >
+  </workspace-taco-detail>
+</div>

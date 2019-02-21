@@ -6,8 +6,10 @@ import { BurgerStateModule } from 'libs/core-state/src/lib/burger-state/burger-s
 import { BurgerService } from 'libs/core-data/src/lib/services/burger.service';
 import { CheeseStateModule } from 'libs/core-state/src/lib/cheese-state/cheese-state.module';
 import { CheeseService } from 'libs/core-data/src/lib/services/cheese.service';
+import { TacoStateModule } from 'libs/core-state/src/lib/taco-state/taco-state.module';
+import { TacoService } from 'libs/core-data/src/lib/services/taco.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule],
-  providers: [PlayerService, BurgerService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule],
+  providers: [PlayerService, BurgerService, TacoService]
 })
 export class CoreStateModule {}

@@ -1,0 +1,28 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title>{{ selectedCharacter?.name || 'N/A' }} </mat-card-title>
+    <mat-card-subtitle>{{
+      (selectedCharacter?.titles)[0] || 'N/A'
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="detail-content">
+    <mat-list dense>
+      <mat-list-item *ngIf="selectedCharacter?.culture"
+        >Culture: {{ selectedCharacter?.culture || 'N/A' }}</mat-list-item
+      >
+      <mat-divider *ngIf="(selectedCharacter?.playedBy)[0]"></mat-divider>
+      <mat-list-item *ngIf="(selectedCharacter?.playedBy)[0]"
+        >Played By: {{ selectedCharacter?.playedBy || 'N/A' }}</mat-list-item
+      >
+      <mat-divider *ngIf="(selectedCharacter?.tvSeries)[0]"></mat-divider>
+      <mat-list-item *ngIf="(selectedCharacter?.tvSeries)[0]"
+        >Appears in:</mat-list-item
+      >
+      <mat-list dense>
+        <mat-list-item *ngFor="let item of selectedCharacter?.tvSeries">
+          {{ item }}
+        </mat-list-item>
+      </mat-list>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

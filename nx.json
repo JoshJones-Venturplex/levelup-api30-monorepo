@@ -97,6 +97,12 @@
     },
     "mat-taco-e2e": {
       "tags": []
+    },
+    "mat-asoiaf": {
+      "tags": []
+    },
+    "mat-asoiaf-e2e": {
+      "tags": []
     }
   }
 }

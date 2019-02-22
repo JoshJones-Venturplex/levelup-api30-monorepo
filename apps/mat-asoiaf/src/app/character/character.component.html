@@ -1,0 +1,12 @@
+<div class="card-container">
+  <workspace-character-list
+    [characters]="characters$ | async"
+    (characterSelected)="selectCharacter($event)"
+    (pageChange)="changePage($event)"
+  >
+  </workspace-character-list>
+  <workspace-character-detail
+    [selectedCharacter]="currentCharacter$ | async"
+  >
+  </workspace-character-detail>
+</div>

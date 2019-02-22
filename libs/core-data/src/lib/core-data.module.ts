@@ -10,6 +10,8 @@ import { Cheese } from './interfaces/cheese';
 import { CheeseService } from './services/cheese.service';
 import { Taco } from './interfaces/taco';
 import { TacoService } from './services/taco.service';
+import { Character } from './interfaces/character';
+import { AsoiafService } from './services/asoiaf.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

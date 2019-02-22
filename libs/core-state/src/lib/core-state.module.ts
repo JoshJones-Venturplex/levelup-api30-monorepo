@@ -8,8 +8,10 @@ import { CheeseStateModule } from 'libs/core-state/src/lib/cheese-state/cheese-s
 import { CheeseService } from 'libs/core-data/src/lib/services/cheese.service';
 import { TacoStateModule } from 'libs/core-state/src/lib/taco-state/taco-state.module';
 import { TacoService } from 'libs/core-data/src/lib/services/taco.service';
+import { CharacterStateModule } from 'libs/core-state/src/lib/asoiaf-state/character-state.module';
+import { AsoiafService } from 'libs/core-data/src/lib/services/asoiaf.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule],
-  providers: [PlayerService, BurgerService, TacoService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService]
 })
 export class CoreStateModule {}

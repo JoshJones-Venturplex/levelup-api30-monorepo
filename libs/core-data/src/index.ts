@@ -9,3 +9,5 @@ export { Cheese } from './lib/interfaces/cheese';
 export { CheeseService } from './lib/services/cheese.service';
 export { Taco } from './lib/interfaces/taco';
 export { TacoService } from './lib/services/taco.service';
+export { Character } from './lib/interfaces/character';
+export { AsoiafService } from './lib/services/asoiaf.service';

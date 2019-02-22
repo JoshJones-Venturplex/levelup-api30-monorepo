@@ -1682,6 +1682,129 @@
           }
         }
       }
+    },
+    "mat-asoiaf": {
+      "root": "apps/mat-asoiaf/",
+      "sourceRoot": "apps/mat-asoiaf/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-asoiaf",
+            "index": "apps/mat-asoiaf/src/index.html",
+            "main": "apps/mat-asoiaf/src/main.ts",
+            "polyfills": "apps/mat-asoiaf/src/polyfills.ts",
+            "tsConfig": "apps/mat-asoiaf/tsconfig.app.json",
+            "assets": [
+              "apps/mat-asoiaf/src/favicon.ico",
+              "apps/mat-asoiaf/src/assets"
+            ],
+            "styles": ["apps/mat-asoiaf/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-asoiaf/src/environments/environment.ts",
+                  "with": "apps/mat-asoiaf/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-asoiaf:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-asoiaf:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-asoiaf:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-asoiaf/src/test.ts",
+            "polyfills": "apps/mat-asoiaf/src/polyfills.ts",
+            "tsConfig": "apps/mat-asoiaf/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-asoiaf/karma.conf.js",
+            "styles": ["apps/mat-asoiaf/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-asoiaf/src/favicon.ico",
+              "apps/mat-asoiaf/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-asoiaf/tsconfig.app.json",
+              "apps/mat-asoiaf/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-asoiaf-e2e": {
+      "root": "apps/mat-asoiaf-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-asoiaf-e2e/protractor.conf.js",
+            "devServerTarget": "mat-asoiaf:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-asoiaf:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-asoiaf-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

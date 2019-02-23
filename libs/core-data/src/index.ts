@@ -11,3 +11,8 @@ export { Taco } from './lib/interfaces/taco';
 export { TacoService } from './lib/services/taco.service';
 export { Character } from './lib/interfaces/character';
 export { AsoiafService } from './lib/services/asoiaf.service';
+export { SpotifyService } from './lib/services/spotify.service';
+export { SpotifyAuthService } from './lib/services/spotify-auth.service';
+export { SpotifyAuthGuard } from './lib/services/spotify-auth.guard';
+export { Album } from './lib/interfaces/album';
+export { TokenInterceptor } from './lib/services/spotify.interceptor';

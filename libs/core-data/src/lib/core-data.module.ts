@@ -12,6 +12,11 @@ import { Taco } from './interfaces/taco';
 import { TacoService } from './services/taco.service';
 import { Character } from './interfaces/character';
 import { AsoiafService } from './services/asoiaf.service';
+import { SpotifyService } from './services/spotify.service';
+import { SpotifyAuthService } from './services/spotify-auth.service'
+import { SpotifyAuthGuard } from './services/spotify-auth.guard'
+import { Album } from './interfaces/album';
+import { TokenInterceptor } from './services/spotify.interceptor';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

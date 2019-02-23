@@ -1,0 +1,11 @@
+<div class="card-container">
+  <workspace-list
+    [albums]="albums$ | async"
+    (albumSelected)="selectAlbum($event)"
+  >
+  </workspace-list>
+  <workspace-detail
+    [selectedAlbum]="currentAlbum$ | async"
+  >
+  </workspace-detail>
+</div>

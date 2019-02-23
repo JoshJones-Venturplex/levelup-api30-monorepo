@@ -103,6 +103,12 @@
     },
     "mat-asoiaf-e2e": {
       "tags": []
+    },
+    "mat-spotify": {
+      "tags": []
+    },
+    "mat-spotify-e2e": {
+      "tags": []
     }
   }
 }

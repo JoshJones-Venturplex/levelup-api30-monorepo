@@ -1805,6 +1805,129 @@
           }
         }
       }
+    },
+    "mat-spotify": {
+      "root": "apps/mat-spotify/",
+      "sourceRoot": "apps/mat-spotify/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-spotify",
+            "index": "apps/mat-spotify/src/index.html",
+            "main": "apps/mat-spotify/src/main.ts",
+            "polyfills": "apps/mat-spotify/src/polyfills.ts",
+            "tsConfig": "apps/mat-spotify/tsconfig.app.json",
+            "assets": [
+              "apps/mat-spotify/src/favicon.ico",
+              "apps/mat-spotify/src/assets"
+            ],
+            "styles": ["apps/mat-spotify/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-spotify/src/environments/environment.ts",
+                  "with": "apps/mat-spotify/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-spotify:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-spotify:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-spotify:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-spotify/src/test.ts",
+            "polyfills": "apps/mat-spotify/src/polyfills.ts",
+            "tsConfig": "apps/mat-spotify/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-spotify/karma.conf.js",
+            "styles": ["apps/mat-spotify/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-spotify/src/favicon.ico",
+              "apps/mat-spotify/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-spotify/tsconfig.app.json",
+              "apps/mat-spotify/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-spotify-e2e": {
+      "root": "apps/mat-spotify-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-spotify-e2e/protractor.conf.js",
+            "devServerTarget": "mat-spotify:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-spotify:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-spotify-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

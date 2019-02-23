@@ -10,8 +10,10 @@ import { TacoStateModule } from 'libs/core-state/src/lib/taco-state/taco-state.m
 import { TacoService } from 'libs/core-data/src/lib/services/taco.service';
 import { CharacterStateModule } from 'libs/core-state/src/lib/asoiaf-state/character-state.module';
 import { AsoiafService } from 'libs/core-data/src/lib/services/asoiaf.service';
+import { SpotifyStateModule } from 'libs/core-state/src/lib/spotify-state/spotify-state.module';
+import { SpotifyAuthService } from 'libs/core-data/src/lib/services/spotify-auth.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService]
 })
 export class CoreStateModule {}

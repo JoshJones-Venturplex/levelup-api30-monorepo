@@ -109,6 +109,12 @@
     },
     "mat-spotify-e2e": {
       "tags": []
+    },
+    "mat-amiibo": {
+      "tags": []
+    },
+    "mat-amiibo-e2e": {
+      "tags": []
     }
   }
 }

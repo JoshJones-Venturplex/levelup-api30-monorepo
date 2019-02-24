@@ -1,0 +1,26 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title>{{ selectedAmiibo?.name || 'N/A' }} </mat-card-title>
+    <mat-card-subtitle>Amiibo Series: {{
+      selectedAmiibo?.amiiboSeries || 'N/A'
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="detail-content">
+    <div class="amiibo-image-container">
+    <img matCardImage class="amiibo-image" src="{{selectedAmiibo?.image}}">
+    </div>
+    <mat-list dense>
+      <mat-list-item *ngIf="selectedAmiibo?.gameSeries"
+        >Series Origin: {{ selectedAmiibo?.gameSeries || 'N/A' }}</mat-list-item
+      >
+      <mat-divider *ngIf="(selectedAmiibo?.type)"></mat-divider>
+      <mat-list-item *ngIf="(selectedAmiibo?.type)"
+        >Amiibo Type: {{ selectedAmiibo?.type || 'N/A' }}</mat-list-item
+      >
+      <mat-divider *ngIf="(selectedAmiibo?.release?.na)"></mat-divider>
+      <mat-list-item *ngIf="(selectedAmiibo?.release?.na)"
+        >Released: {{ selectedAmiibo?.release?.na }}</mat-list-item
+      >
+    </mat-list>
+  </mat-card-content>
+</mat-card>

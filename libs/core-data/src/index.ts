@@ -16,3 +16,5 @@ export { SpotifyAuthService } from './lib/services/spotify-auth.service';
 export { SpotifyAuthGuard } from './lib/services/spotify-auth.guard';
 export { Album } from './lib/interfaces/album';
 export { TokenInterceptor } from './lib/services/spotify.interceptor';
+export { Amiibo } from './lib/interfaces/amiibo';
+export { AmiiboService } from './lib/services/amiibo.service';

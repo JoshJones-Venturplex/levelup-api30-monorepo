@@ -17,6 +17,8 @@ import { SpotifyAuthService } from './services/spotify-auth.service'
 import { SpotifyAuthGuard } from './services/spotify-auth.guard'
 import { Album } from './interfaces/album';
 import { TokenInterceptor } from './services/spotify.interceptor';
+import { Amiibo } from './interfaces/amiibo';
+import { AmiiboService } from './services/amiibo.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

@@ -1928,6 +1928,129 @@
           }
         }
       }
+    },
+    "mat-amiibo": {
+      "root": "apps/mat-amiibo/",
+      "sourceRoot": "apps/mat-amiibo/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-amiibo",
+            "index": "apps/mat-amiibo/src/index.html",
+            "main": "apps/mat-amiibo/src/main.ts",
+            "polyfills": "apps/mat-amiibo/src/polyfills.ts",
+            "tsConfig": "apps/mat-amiibo/tsconfig.app.json",
+            "assets": [
+              "apps/mat-amiibo/src/favicon.ico",
+              "apps/mat-amiibo/src/assets"
+            ],
+            "styles": ["apps/mat-amiibo/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-amiibo/src/environments/environment.ts",
+                  "with": "apps/mat-amiibo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-amiibo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-amiibo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-amiibo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-amiibo/src/test.ts",
+            "polyfills": "apps/mat-amiibo/src/polyfills.ts",
+            "tsConfig": "apps/mat-amiibo/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-amiibo/karma.conf.js",
+            "styles": ["apps/mat-amiibo/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-amiibo/src/favicon.ico",
+              "apps/mat-amiibo/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-amiibo/tsconfig.app.json",
+              "apps/mat-amiibo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-amiibo-e2e": {
+      "root": "apps/mat-amiibo-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-amiibo-e2e/protractor.conf.js",
+            "devServerTarget": "mat-amiibo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-amiibo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-amiibo-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

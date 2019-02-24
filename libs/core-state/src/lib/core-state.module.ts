@@ -12,8 +12,10 @@ import { CharacterStateModule } from 'libs/core-state/src/lib/asoiaf-state/chara
 import { AsoiafService } from 'libs/core-data/src/lib/services/asoiaf.service';
 import { SpotifyStateModule } from 'libs/core-state/src/lib/spotify-state/spotify-state.module';
 import { SpotifyAuthService } from 'libs/core-data/src/lib/services/spotify-auth.service';
+import { AmiiboStateModule } from 'libs/core-state/src/lib/amiibo-state/amiibo-state.module';
+import { AmiiboService } from 'libs/core-data/src/lib/services/amiibo.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService]
 })
 export class CoreStateModule {}

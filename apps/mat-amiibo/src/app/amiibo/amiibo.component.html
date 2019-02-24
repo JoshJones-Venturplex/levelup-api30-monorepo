@@ -1,0 +1,11 @@
+<div class="card-container">
+  <workspace-amiibo-list
+    [amiibos]="amiibos$ | async"
+    (amiiboSelected)="selectAmiibo($event)"
+  >
+  </workspace-amiibo-list>
+  <workspace-amiibo-detail
+    [selectedAmiibo]="currentAmiibo$ | async"
+  >
+  </workspace-amiibo-detail>
+</div>

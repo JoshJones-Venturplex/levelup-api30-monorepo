@@ -1,0 +1,21 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title>{{ (selectedPokemonDetails?.name || 'N/A') | titlecase }} </mat-card-title>
+    <mat-card-subtitle>Pokemon ID: {{
+      selectedPokemonDetails?.id || 'N/A'
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="detail-content">
+    <mat-list dense>
+        <mat-list-item>
+            Color: {{selectedPokemonDetails?.color.name}}
+        </mat-list-item>
+        <mat-list-item>
+            Generation: {{selectedPokemonDetails?.generation.name}}
+        </mat-list-item>
+        <mat-list-item>
+            Shape: {{selectedPokemonDetails?.shape.name}}
+        </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

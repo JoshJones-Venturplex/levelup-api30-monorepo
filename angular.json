@@ -2051,6 +2051,129 @@
           }
         }
       }
+    },
+    "mat-pokemon": {
+      "root": "apps/mat-pokemon/",
+      "sourceRoot": "apps/mat-pokemon/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-pokemon",
+            "index": "apps/mat-pokemon/src/index.html",
+            "main": "apps/mat-pokemon/src/main.ts",
+            "polyfills": "apps/mat-pokemon/src/polyfills.ts",
+            "tsConfig": "apps/mat-pokemon/tsconfig.app.json",
+            "assets": [
+              "apps/mat-pokemon/src/favicon.ico",
+              "apps/mat-pokemon/src/assets"
+            ],
+            "styles": ["apps/mat-pokemon/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-pokemon/src/environments/environment.ts",
+                  "with": "apps/mat-pokemon/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-pokemon:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-pokemon:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-pokemon:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-pokemon/src/test.ts",
+            "polyfills": "apps/mat-pokemon/src/polyfills.ts",
+            "tsConfig": "apps/mat-pokemon/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-pokemon/karma.conf.js",
+            "styles": ["apps/mat-pokemon/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-pokemon/src/favicon.ico",
+              "apps/mat-pokemon/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-pokemon/tsconfig.app.json",
+              "apps/mat-pokemon/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-pokemon-e2e": {
+      "root": "apps/mat-pokemon-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-pokemon-e2e/protractor.conf.js",
+            "devServerTarget": "mat-pokemon:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-pokemon:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-pokemon-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

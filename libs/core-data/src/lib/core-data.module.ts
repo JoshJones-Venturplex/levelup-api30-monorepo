@@ -19,6 +19,9 @@ import { Album } from './interfaces/album';
 import { TokenInterceptor } from './services/spotify.interceptor';
 import { Amiibo } from './interfaces/amiibo';
 import { AmiiboService } from './services/amiibo.service';
+import { Pokemon } from './interfaces/pokemon';
+import { PokemonDetail } from './interfaces/pokemon-detail';
+import { PokemonService } from './services/pokemon.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

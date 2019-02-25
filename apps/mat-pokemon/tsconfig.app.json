@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/apps/mat-pokemon",
+    "types": []
+  },
+  "exclude": ["test.ts", "**/*.spec.ts"],
+  "include": ["**/*.ts"]
+}

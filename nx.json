@@ -115,6 +115,12 @@
     },
     "mat-amiibo-e2e": {
       "tags": []
+    },
+    "mat-pokemon": {
+      "tags": []
+    },
+    "mat-pokemon-e2e": {
+      "tags": []
     }
   }
 }

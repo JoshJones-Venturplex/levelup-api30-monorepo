@@ -14,8 +14,10 @@ import { SpotifyStateModule } from 'libs/core-state/src/lib/spotify-state/spotif
 import { SpotifyAuthService } from 'libs/core-data/src/lib/services/spotify-auth.service';
 import { AmiiboStateModule } from 'libs/core-state/src/lib/amiibo-state/amiibo-state.module';
 import { AmiiboService } from 'libs/core-data/src/lib/services/amiibo.service';
+import { PokemonStateModule } from 'libs/core-state/src/lib/pokemon-state/pokemon-state.module';
+import { PokemonService } from 'libs/core-data/src/lib/services/pokemon.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService]
 })
 export class CoreStateModule {}

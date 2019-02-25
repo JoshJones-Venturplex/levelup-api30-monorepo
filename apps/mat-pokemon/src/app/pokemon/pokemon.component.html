@@ -1,0 +1,13 @@
+<div class="card-container">
+    <workspace-pokemon-list
+      [pokemons]="pokemons$ | async"
+      (pokemonSelected)="selectPokemon($event)"
+      (offsetChange)="changeOffset($event)"
+    >
+    </workspace-pokemon-list>
+    <workspace-pokemon-detail
+      [selectedPokemonDetails]="currentPokemonDetails$ | async"
+    >
+    </workspace-pokemon-detail>
+  </div>
+  

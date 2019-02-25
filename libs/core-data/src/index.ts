@@ -18,3 +18,6 @@ export { Album } from './lib/interfaces/album';
 export { TokenInterceptor } from './lib/services/spotify.interceptor';
 export { Amiibo } from './lib/interfaces/amiibo';
 export { AmiiboService } from './lib/services/amiibo.service';
+export { Pokemon } from './lib/interfaces/pokemon';
+export { PokemonDetail } from './lib/interfaces/pokemon-detail';
+export { PokemonService } from './lib/services/pokemon.service';

@@ -121,6 +121,12 @@
     },
     "mat-pokemon-e2e": {
       "tags": []
+    },
+    "mat-movie": {
+      "tags": []
+    },
+    "mat-movie-e2e": {
+      "tags": []
     }
   }
 }

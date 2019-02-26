@@ -1,0 +1,12 @@
+<div class="card-container">
+  <workspace-movie-list
+    [movies]="movies$ | async"
+    (search)="searchMovies($event)"
+    (movieSelected)="selectMovie($event)"
+  >
+  </workspace-movie-list>
+  <workspace-movie-detail
+    [selectedMovie]="currentMovie$ | async"
+  >
+  </workspace-movie-detail>
+</div>

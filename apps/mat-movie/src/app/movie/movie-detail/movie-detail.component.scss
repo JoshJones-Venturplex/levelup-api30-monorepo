@@ -1,0 +1,38 @@
+.detail-card {
+    margin: 20px;
+    width: 400px;
+}
+
+.detail-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+}
+
+.detail-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-image-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 300px;
+    width: 100%;
+}
+
+.movie-image {
+    object-fit: scale-down;
+}
+
+.detail-plot {
+    font-size: 12px;
+    text-align: center;
+}

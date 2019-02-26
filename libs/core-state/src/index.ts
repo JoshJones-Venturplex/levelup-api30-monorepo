@@ -10,4 +10,5 @@ export { AlbumFacade } from './lib/spotify-state/album/album.facade';
 export { AmiiboFacade } from './lib/amiibo-state/amiibo/amiibo.facade';
 export { PokemonFacade } from './lib/pokemon-state/pokemon/pokemon.facade';
 export { PokemonDetailsFacade } from './lib/pokemon-state/pokemon-details/pokemon-details.facade';
+export { MovieFacade } from './lib/movie-state/movie/movie.facade';
 //export { AuthState } from './lib/spotify-state/spotify-state.module'

@@ -21,3 +21,5 @@ export { AmiiboService } from './lib/services/amiibo.service';
 export { Pokemon } from './lib/interfaces/pokemon';
 export { PokemonDetail } from './lib/interfaces/pokemon-detail';
 export { PokemonService } from './lib/services/pokemon.service';
+export { Movie, MovieInfo } from './lib/interfaces/movie';
+export { MovieService } from './lib/services/movie.service';

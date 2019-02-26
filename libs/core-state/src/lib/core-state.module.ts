@@ -16,8 +16,10 @@ import { AmiiboStateModule } from 'libs/core-state/src/lib/amiibo-state/amiibo-s
 import { AmiiboService } from 'libs/core-data/src/lib/services/amiibo.service';
 import { PokemonStateModule } from 'libs/core-state/src/lib/pokemon-state/pokemon-state.module';
 import { PokemonService } from 'libs/core-data/src/lib/services/pokemon.service';
+import { MovieStateModule } from 'libs/core-state/src/lib/movie-state/movie-state.module';
+import { MovieService } from 'libs/core-data/src/lib/services/movie.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule, MovieStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService, MovieService]
 })
 export class CoreStateModule {}

@@ -1,0 +1,26 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title>{{ selectedMovie?.Title || 'N/A' }} </mat-card-title>
+    <mat-card-subtitle>Released: {{
+      selectedMovie?.Year || 'N/A'
+    }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="detail-content">
+    <div class="movie-image-container">
+    <img matCardImage class="movie-image" src="{{selectedMovie?.Poster}}">
+    </div>
+    <div class="detail-plot">
+      {{ selectedMovie?.Plot || 'N/A' }}
+    </div>
+    <mat-list dense>
+      <mat-divider *ngIf="(selectedMovie?.Director)"></mat-divider>
+      <mat-list-item *ngIf="(selectedMovie?.Director)"
+        >Director: {{ selectedMovie?.Director || 'N/A' }}</mat-list-item
+      >
+      <mat-divider *ngIf="(selectedMovie?.Writer)"></mat-divider>
+      <mat-list-item *ngIf="(selectedMovie?.Writer)"
+        >Writer(s): {{ selectedMovie?.Writer }}</mat-list-item
+      >
+    </mat-list>
+  </mat-card-content>
+</mat-card>

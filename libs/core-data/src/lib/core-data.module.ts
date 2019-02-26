@@ -22,6 +22,8 @@ import { AmiiboService } from './services/amiibo.service';
 import { Pokemon } from './interfaces/pokemon';
 import { PokemonDetail } from './interfaces/pokemon-detail';
 import { PokemonService } from './services/pokemon.service';
+import { Movie, MovieInfo } from './interfaces/movie';
+import { MovieService } from './services/movie.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

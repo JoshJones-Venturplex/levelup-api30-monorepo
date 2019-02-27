@@ -23,3 +23,5 @@ export { PokemonDetail } from './lib/interfaces/pokemon-detail';
 export { PokemonService } from './lib/services/pokemon.service';
 export { Movie, MovieInfo } from './lib/interfaces/movie';
 export { MovieService } from './lib/services/movie.service';
+export { Ship } from './lib/interfaces/ship';
+export { SpacexService } from './lib/services/spacex.service';

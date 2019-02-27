@@ -24,6 +24,8 @@ import { PokemonDetail } from './interfaces/pokemon-detail';
 import { PokemonService } from './services/pokemon.service';
 import { Movie, MovieInfo } from './interfaces/movie';
 import { MovieService } from './services/movie.service';
+import { Ship } from './interfaces/ship';
+import { SpacexService } from './services/spacex.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

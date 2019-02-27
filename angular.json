@@ -2297,6 +2297,129 @@
           }
         }
       }
+    },
+    "mat-spacex": {
+      "root": "apps/mat-spacex/",
+      "sourceRoot": "apps/mat-spacex/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-spacex",
+            "index": "apps/mat-spacex/src/index.html",
+            "main": "apps/mat-spacex/src/main.ts",
+            "polyfills": "apps/mat-spacex/src/polyfills.ts",
+            "tsConfig": "apps/mat-spacex/tsconfig.app.json",
+            "assets": [
+              "apps/mat-spacex/src/favicon.ico",
+              "apps/mat-spacex/src/assets"
+            ],
+            "styles": ["apps/mat-spacex/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-spacex/src/environments/environment.ts",
+                  "with": "apps/mat-spacex/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-spacex:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-spacex:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-spacex:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-spacex/src/test.ts",
+            "polyfills": "apps/mat-spacex/src/polyfills.ts",
+            "tsConfig": "apps/mat-spacex/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-spacex/karma.conf.js",
+            "styles": ["apps/mat-spacex/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-spacex/src/favicon.ico",
+              "apps/mat-spacex/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-spacex/tsconfig.app.json",
+              "apps/mat-spacex/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-spacex-e2e": {
+      "root": "apps/mat-spacex-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-spacex-e2e/protractor.conf.js",
+            "devServerTarget": "mat-spacex:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-spacex:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-spacex-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

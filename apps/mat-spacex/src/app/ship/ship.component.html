@@ -1,0 +1,11 @@
+<div class="card-container">
+  <workspace-ship-list
+    [ships]="ships$ | async"
+    (shipSelected)="selectShip($event)"
+  >
+  </workspace-ship-list>
+  <workspace-ship-detail
+    [selectedShip]="currentShip$ | async"
+  >
+  </workspace-ship-detail>
+</div>

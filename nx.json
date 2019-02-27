@@ -127,6 +127,12 @@
     },
     "mat-movie-e2e": {
       "tags": []
+    },
+    "mat-spacex": {
+      "tags": []
+    },
+    "mat-spacex-e2e": {
+      "tags": []
     }
   }
 }

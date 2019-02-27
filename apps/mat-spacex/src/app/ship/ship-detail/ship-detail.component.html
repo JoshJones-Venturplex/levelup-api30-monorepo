@@ -1,0 +1,57 @@
+<mat-card class="detail-card">
+  <mat-card-header>
+    <mat-card-title>{{ selectedShip?.ship_name || 'Select a Ship' }} </mat-card-title>
+    <mat-card-subtitle *ngIf="selectShip?.ship_type"
+      >Type: {{ selectedShip?.ship_type }}</mat-card-subtitle
+    >
+  </mat-card-header>
+  <mat-card-content class="detail-content">
+    <div class="ship-image-container">
+      <img matCardImage class="ship-image" src="{{selectedShip?.image}}" />
+    </div>
+    <mat-list dense>
+      <div *ngIf="selectedShip?.home_port">
+        Home Port:
+        <mat-list-item >{{
+          selectedShip?.home_port
+        }}</mat-list-item>
+      </div>
+
+      <div *ngIf="selectedShip?.status">
+        <mat-divider></mat-divider>
+        Status:
+        <mat-list-item>{{
+          selectedShip?.status
+        }}</mat-list-item>
+      </div>
+
+      <div *ngIf="selectedShip?.year_built">
+        <mat-divider></mat-divider>
+        Year Built:
+        <mat-list-item>{{
+          selectedShip?.year_built
+        }}</mat-list-item>
+      </div>
+
+      <div *ngIf="selectedShip?.roles">
+        <mat-divider></mat-divider>
+        <mat-list dense>
+          Roles:
+          <mat-list-item *ngFor="let role of selectedShip.roles">
+            {{ role }}
+          </mat-list-item>
+        </mat-list>
+      </div>
+
+      <div *ngIf="selectedShip.missions">
+        <mat-divider></mat-divider>
+        <mat-list dense>
+          Missions:
+          <mat-list-item *ngFor="let mission of selectedShip.missions">
+            {{ mission?.name }}
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

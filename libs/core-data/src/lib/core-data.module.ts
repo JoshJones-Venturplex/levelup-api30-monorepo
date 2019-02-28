@@ -26,6 +26,8 @@ import { Movie, MovieInfo } from './interfaces/movie';
 import { MovieService } from './services/movie.service';
 import { Ship } from './interfaces/ship';
 import { SpacexService } from './services/spacex.service';
+import { Dev } from './interfaces/dev';
+import { VenturplexService } from './services/venturplex.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

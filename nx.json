@@ -133,6 +133,12 @@
     },
     "mat-spacex-e2e": {
       "tags": []
+    },
+    "mat-venturplex": {
+      "tags": []
+    },
+    "mat-venturplex-e2e": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,16 @@
+<mat-progress-bar *ngIf="loading | async" mode="indeterminate"></mat-progress-bar>
+<div class="card-container">
+  <workspace-dev-list
+    [devs]="devs$ | async"
+    (devSelected)="selectDev($event)"
+    (reset)="resetCurrentDev()"
+  >
+  </workspace-dev-list>
+  <workspace-dev-detail
+    [selectedDev]="currentDev$ | async"
+    (saved)="saveDev($event)"
+    (canceled)="resetCurrentDev()"
+    (deleted)="deleteDev($event)"
+  >
+  </workspace-dev-detail>
+</div>

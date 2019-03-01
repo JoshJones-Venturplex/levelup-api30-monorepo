@@ -1,0 +1,18 @@
+<div class="loader">
+  <mat-progress-bar *ngIf="loading | async" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="card-container">
+  <workspace-item-list
+    [items]="items$ | async"
+    (itemSelected)="selectItem($event)"
+    (reset)="resetCurrentItem()"
+  >
+  </workspace-item-list>
+  <workspace-item-detail
+    [selectedItem]="currentItem$ | async"
+    (saved)="saveItem($event)"
+    (canceled)="resetCurrentItem()"
+    (deleted)="deleteItem($event)"
+  >
+  </workspace-item-detail>
+</div>

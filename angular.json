@@ -2543,6 +2543,129 @@
           }
         }
       }
+    },
+    "mat-inventory": {
+      "root": "apps/mat-inventory/",
+      "sourceRoot": "apps/mat-inventory/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-inventory",
+            "index": "apps/mat-inventory/src/index.html",
+            "main": "apps/mat-inventory/src/main.ts",
+            "polyfills": "apps/mat-inventory/src/polyfills.ts",
+            "tsConfig": "apps/mat-inventory/tsconfig.app.json",
+            "assets": [
+              "apps/mat-inventory/src/favicon.ico",
+              "apps/mat-inventory/src/assets"
+            ],
+            "styles": ["apps/mat-inventory/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-inventory/src/environments/environment.ts",
+                  "with": "apps/mat-inventory/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-inventory:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-inventory:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-inventory:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-inventory/src/test.ts",
+            "polyfills": "apps/mat-inventory/src/polyfills.ts",
+            "tsConfig": "apps/mat-inventory/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-inventory/karma.conf.js",
+            "styles": ["apps/mat-inventory/src/styles.scss"],
+            "scripts": [],
+            "assets": [
+              "apps/mat-inventory/src/favicon.ico",
+              "apps/mat-inventory/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-inventory/tsconfig.app.json",
+              "apps/mat-inventory/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-inventory-e2e": {
+      "root": "apps/mat-inventory-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-inventory-e2e/protractor.conf.js",
+            "devServerTarget": "mat-inventory:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-inventory:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-inventory-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "cli": {

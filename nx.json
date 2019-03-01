@@ -139,6 +139,12 @@
     },
     "mat-venturplex-e2e": {
       "tags": []
+    },
+    "mat-inventory": {
+      "tags": []
+    },
+    "mat-inventory-e2e": {
+      "tags": []
     }
   }
 }

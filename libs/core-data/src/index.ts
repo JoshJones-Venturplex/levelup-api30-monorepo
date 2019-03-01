@@ -27,3 +27,5 @@ export { Ship } from './lib/interfaces/ship';
 export { SpacexService } from './lib/services/spacex.service';
 export { Dev } from './lib/interfaces/dev';
 export { VenturplexService } from './lib/services/venturplex.service';
+export { Item } from './lib/interfaces/inventory';
+export { InventoryService } from './lib/services/inventory.service';

@@ -145,6 +145,12 @@
     },
     "mat-inventory-e2e": {
       "tags": []
+    },
+    "mat-ticket": {
+      "tags": []
+    },
+    "mat-ticket-e2e": {
+      "tags": []
     }
   }
 }

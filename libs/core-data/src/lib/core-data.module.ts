@@ -30,6 +30,8 @@ import { Dev } from './interfaces/dev';
 import { VenturplexService } from './services/venturplex.service';
 import { Item } from './interfaces/inventory';
 import { InventoryService } from './services/inventory.service';
+import { Ticket } from './interfaces/ticket';
+import { TicketService } from './services/ticket.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

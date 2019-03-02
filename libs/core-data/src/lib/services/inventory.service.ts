@@ -6,7 +6,7 @@ import { Item } from '@workspace/core-data';
   providedIn: 'root'
 })
 export class InventoryService {
-  baseUrl: String = 'https://inventory-api-aexafxxacq.now.sh';
+  baseUrl: String = 'https://inventory-api-ymzxbysqqy.now.sh';
 
   constructor(private http: HttpClient) { }
 

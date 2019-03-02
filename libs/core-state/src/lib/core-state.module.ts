@@ -24,8 +24,10 @@ import { VenturplexStateModule } from 'libs/core-state/src/lib/venturplex-state/
 import { VenturplexService } from 'libs/core-data/src/lib/services/venturplex.service';
 import { InventoryStateModule } from 'libs/core-state/src/lib/inventory-state/inventory-state.module';
 import { InventoryService } from 'libs/core-data/src/lib/services/inventory.service';
+import { TicketStateModule } from 'libs/core-state/src/lib/ticket-state/ticket-state.module';
+import { TicketService } from 'libs/core-data/src/lib/services/ticket.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule, MovieStateModule, SpacexStateModule, VenturplexStateModule, InventoryStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService, MovieService, VenturplexService, InventoryService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule, MovieStateModule, SpacexStateModule, VenturplexStateModule, InventoryStateModule, TicketStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService, MovieService, VenturplexService, InventoryService, TicketService]
 })
 export class CoreStateModule {}

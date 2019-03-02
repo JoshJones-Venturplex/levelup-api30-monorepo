@@ -1,0 +1,48 @@
+<div class="board-container">
+  <div>
+    TODO
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="ticketsTodo"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="board-list"
+      (cdkDropListDropped)="drop($event, 'todo')"
+    >
+      <mat-card class="board-card" cdkDrag *ngFor="let ticket of ticketsTodo">
+        <mat-card-header>
+          <mat-card-title>{{ ticket.name }}</mat-card-title>
+          <mat-card-subtitle>{{ ticket.id }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content> {{ ticket.description! }} </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div>
+    DONE
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="ticketsDone"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="board-list"
+      (cdkDropListDropped)="drop($event, 'done')"
+    >
+      <mat-card class="board-card" cdkDrag *ngFor="let ticket of ticketsDone">
+        <mat-card-header>
+          <mat-card-title>{{ ticket.name }}</mat-card-title>
+          <mat-card-subtitle>{{ ticket.id }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content> {{ ticket.description! }} </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  
+  <workspace-ticket-form
+  [selectedTicket]="currentTicket$ | async"
+  (saved)="saveTicket($event)"
+  (canceled)="resetCurrentTicket()"
+  (deleted)="deleteTicket($event)"
+></workspace-ticket-form>
+
+</div>

@@ -29,3 +29,5 @@ export { Dev } from './lib/interfaces/dev';
 export { VenturplexService } from './lib/services/venturplex.service';
 export { Item } from './lib/interfaces/inventory';
 export { InventoryService } from './lib/services/inventory.service';
+export { Ticket } from './lib/interfaces/ticket';
+export { TicketService } from './lib/services/ticket.service';

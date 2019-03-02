@@ -14,4 +14,5 @@ export { MovieFacade } from './lib/movie-state/movie/movie.facade';
 export { ShipFacade } from './lib/spacex-state/ship/ship.facade';
 export { DevsFacade } from './lib/venturplex-state/dev/dev.facade';
 export { ItemsFacade } from './lib/inventory-state/item/item.facade';
+export { TicketsFacade } from './lib/ticket-state/ticket/ticket.facade';
 //export { AuthState } from './lib/spotify-state/spotify-state.module'

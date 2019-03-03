@@ -32,6 +32,8 @@ import { Item } from './interfaces/inventory';
 import { InventoryService } from './services/inventory.service';
 import { Ticket } from './interfaces/ticket';
 import { TicketService } from './services/ticket.service';
+import { Coffee } from './interfaces/coffee';
+import { CoffeeService } from './services/coffee.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

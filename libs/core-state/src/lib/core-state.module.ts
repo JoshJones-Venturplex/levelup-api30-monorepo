@@ -26,8 +26,10 @@ import { InventoryStateModule } from 'libs/core-state/src/lib/inventory-state/in
 import { InventoryService } from 'libs/core-data/src/lib/services/inventory.service';
 import { TicketStateModule } from 'libs/core-state/src/lib/ticket-state/ticket-state.module';
 import { TicketService } from 'libs/core-data/src/lib/services/ticket.service';
+import { CoffeeStateModule } from 'libs/core-state/src/lib/coffee-state/coffee-state.module';
+import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule, MovieStateModule, SpacexStateModule, VenturplexStateModule, InventoryStateModule, TicketStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService, MovieService, VenturplexService, InventoryService, TicketService]
+  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule, MovieStateModule, SpacexStateModule, VenturplexStateModule, InventoryStateModule, TicketStateModule, CoffeeStateModule],
+  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService, MovieService, VenturplexService, InventoryService, TicketService, CoffeeService]
 })
 export class CoreStateModule {}

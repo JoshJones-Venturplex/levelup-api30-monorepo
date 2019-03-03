@@ -1,0 +1,18 @@
+<div class="loader">
+  <mat-progress-bar *ngIf="loading | async" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="card-container">
+  <workspace-coffee-list
+    [coffees]="coffees$ | async"
+    (coffeeSelected)="selectCoffee($event)"
+    (reset)="resetCurrentCoffee()"
+  >
+  </workspace-coffee-list>
+  <workspace-coffee-detail
+    [selectedCoffee]="currentCoffee$ | async"
+    (saved)="saveCoffee($event)"
+    (canceled)="resetCurrentCoffee()"
+    (deleted)="deleteCoffee($event)"
+  >
+  </workspace-coffee-detail>
+</div>

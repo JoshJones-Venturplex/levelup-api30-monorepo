@@ -151,6 +151,12 @@
     },
     "mat-ticket-e2e": {
       "tags": []
+    },
+    "mat-coffee": {
+      "tags": []
+    },
+    "mat-coffee-e2e": {
+      "tags": []
     }
   }
 }

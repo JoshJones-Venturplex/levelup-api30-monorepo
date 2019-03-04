@@ -1,0 +1,18 @@
+<div class="loader">
+  <mat-progress-bar *ngIf="loading | async" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="card-container">
+  <workspace-smoothie-list
+    [smoothies]="smoothies$ | async"
+    (smoothieSelected)="selectSmoothie($event)"
+    (reset)="resetCurrentSmoothie()"
+  >
+  </workspace-smoothie-list>
+  <workspace-smoothie-detail
+    [selectedSmoothie]="currentSmoothie$ | async"
+    (saved)="saveSmoothie($event)"
+    (canceled)="resetCurrentSmoothie()"
+    (deleted)="deleteSmoothie($event)"
+  >
+  </workspace-smoothie-detail>
+</div>

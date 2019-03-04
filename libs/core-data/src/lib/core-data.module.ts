@@ -34,6 +34,8 @@ import { Ticket } from './interfaces/ticket';
 import { TicketService } from './services/ticket.service';
 import { Coffee } from './interfaces/coffee';
 import { CoffeeService } from './services/coffee.service';
+import { Smoothie } from './interfaces/smoothie';
+import { SmoothieService } from './services/smoothie.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

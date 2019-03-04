@@ -157,6 +157,12 @@
     },
     "mat-coffee-e2e": {
       "tags": []
+    },
+    "mat-smoothie": {
+      "tags": []
+    },
+    "mat-smoothie-e2e": {
+      "tags": []
     }
   }
 }

@@ -33,3 +33,5 @@ export { Ticket } from './lib/interfaces/ticket';
 export { TicketService } from './lib/services/ticket.service';
 export { Coffee } from './lib/interfaces/coffee';
 export { CoffeeService } from './lib/services/coffee.service';
+export { Smoothie } from './lib/interfaces/smoothie';
+export { SmoothieService } from './lib/services/smoothie.service';

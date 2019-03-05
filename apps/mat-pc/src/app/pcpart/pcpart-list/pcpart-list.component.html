@@ -14,7 +14,7 @@
       </nb-list-item>
       <nb-list-item *ngFor="let pcpart of pcparts">
         <button nbButton class="list-button" (click)="selectPcpart(pcpart)">
-          {{ pcpart.flavor }} {{ pcpart.type }}
+          {{ pcpart.name }}
         </button>
       </nb-list-item>
     </nb-list>

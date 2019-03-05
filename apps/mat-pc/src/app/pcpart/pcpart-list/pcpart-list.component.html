@@ -1,0 +1,22 @@
+<nb-card [size]="'medium'">
+  <nb-card-header>Pc Parts</nb-card-header>
+  <nb-card-body>
+    <nb-list>
+      <nb-list-item>
+        <button
+          mat-raised-button
+          class="list-button"
+          color="primary"
+          (click)="reset.emit()"
+        >
+          Add New Pc Part
+        </button>
+      </nb-list-item>
+      <nb-list-item *ngFor="let pcpart of pcparts">
+        <button nbButton class="list-button" (click)="selectPcpart(pcpart)">
+          {{ pcpart.flavor }} {{ pcpart.type }}
+        </button>
+      </nb-list-item>
+    </nb-list>
+  </nb-card-body>
+</nb-card>

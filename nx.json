@@ -163,6 +163,15 @@
     },
     "mat-smoothie-e2e": {
       "tags": []
+    },
+    "mat-pc": {
+      "tags": []
+    },
+    "mat-pc-e2e": {
+      "tags": []
+    },
+    "nebular": {
+      "tags": []
     }
   }
 }

@@ -1,0 +1,17 @@
+<div class="card-container">
+  <workspace-pcpart-list
+  class="component-container"
+    [pcparts]="pcparts$ | async"
+    (pcpartSelected)="selectPcpart($event)"
+    (reset)="resetCurrentPcpart()"
+  >
+  </workspace-pcpart-list>
+  <workspace-pcpart-detail
+  class="component-container"
+    [selectedPcpart]="currentPcpart$ | async"
+    (saved)="savePcpart($event)"
+    (canceled)="resetCurrentPcpart()"
+    (deleted)="deletePcpart($event)"
+  >
+  </workspace-pcpart-detail>
+</div>

@@ -11,6 +11,7 @@ import { SwapiDetailComponent } from './swapi-detail/swapi-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SwapiComponent } from './swapi/swapi.component';
 import { SwapiService } from './shared/swapi.service';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, SwapiListComponent, SwapiDetailComponent, SwapiComponent],
@@ -19,7 +20,9 @@ import { SwapiService } from './shared/swapi.service';
     NxModule.forRoot(),
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbLayoutModule
   ],
   providers: [SwapiService],
   bootstrap: [AppComponent]

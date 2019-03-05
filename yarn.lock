@@ -112,11 +112,28 @@
     rxjs "6.3.3"
     source-map "0.7.3"
 
+"@angular-devkit/core@7.3.4":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.4.tgz#fae0521652c7430237025f117531ca3262ef8335"
+  dependencies:
+    ajv "6.9.1"
+    chokidar "2.0.4"
+    fast-json-stable-stringify "2.0.0"
+    rxjs "6.3.3"
+    source-map "0.7.3"
+
 "@angular-devkit/schematics@7.2.4":
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.2.4.tgz#d92b2b8b9114135806d593ea6a2b376c777354dc"
   dependencies:
     "@angular-devkit/core" "7.2.4"
+    rxjs "6.3.3"
+
+"@angular-devkit/schematics@7.3.4":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-7.3.4.tgz#918c9349835f3a4c9a7128ebcda0738b623fc89e"
+  dependencies:
+    "@angular-devkit/core" "7.3.4"
     rxjs "6.3.3"
 
 "@angular/animations@^7.2.4":
@@ -352,6 +369,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@nebular/theme@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@nebular/theme/-/theme-3.4.0.tgz#972b4285f0c988543723d3f7a7ec333259b491da"
+  dependencies:
+    intersection-observer "0.5.0"
+
 "@ngrx/effects@6.1.2":
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-6.1.2.tgz#602f3ee9798e00179075ddef030ded88c28b1aa1"
@@ -427,6 +450,14 @@
     "@angular-devkit/core" "7.2.4"
     "@angular-devkit/schematics" "7.2.4"
     typescript "3.2.2"
+
+"@schematics/angular@^7.0.0":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-7.3.4.tgz#ba36efdd5474b793eb693d47772f998e6bd6043e"
+  dependencies:
+    "@angular-devkit/core" "7.3.4"
+    "@angular-devkit/schematics" "7.3.4"
+    typescript "3.2.4"
 
 "@schematics/update@0.12.4":
   version "0.12.4"
@@ -723,6 +754,15 @@ ajv@6.6.2:
 ajv@6.7.0:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.7.0.tgz#e3ce7bb372d6577bb1839f1dfdfcbf5ad2948d96"
+  dependencies:
+    fast-deep-equal "^2.0.1"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.4.1"
+    uri-js "^4.2.2"
+
+ajv@6.9.1:
+  version "6.9.1"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.9.1.tgz#a4d3683d74abc5670e75f0b16520f70a20ea8dc1"
   dependencies:
     fast-deep-equal "^2.0.1"
     fast-json-stable-stringify "^2.0.0"
@@ -3320,6 +3360,10 @@ interpret@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.2.0.tgz#d5061a6224be58e8083985f5014d844359576296"
 
+intersection-observer@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.5.0.tgz#9fe8bee3953c755b1485c38efd9633d535775ea6"
+
 invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -4801,6 +4845,10 @@ nanomatch@^1.2.9:
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
+
+nebular-icons@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/nebular-icons/-/nebular-icons-1.1.0.tgz#83a725822f963a60636e54be6c7145eff2306d3f"
 
 needle@^2.2.1:
   version "2.2.4"

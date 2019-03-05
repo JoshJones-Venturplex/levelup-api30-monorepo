@@ -3035,6 +3035,156 @@
           }
         }
       }
+    },
+    "mat-pc": {
+      "root": "apps/mat-pc/",
+      "sourceRoot": "apps/mat-pc/src",
+      "projectType": "application",
+      "prefix": "workspace",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/mat-pc",
+            "index": "apps/mat-pc/src/index.html",
+            "main": "apps/mat-pc/src/main.ts",
+            "polyfills": "apps/mat-pc/src/polyfills.ts",
+            "tsConfig": "apps/mat-pc/tsconfig.app.json",
+            "assets": ["apps/mat-pc/src/favicon.ico", "apps/mat-pc/src/assets"],
+            "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "apps/mat-pc/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/mat-pc/src/environments/environment.ts",
+                  "with": "apps/mat-pc/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mat-pc:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mat-pc:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mat-pc:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/mat-pc/src/test.ts",
+            "polyfills": "apps/mat-pc/src/polyfills.ts",
+            "tsConfig": "apps/mat-pc/tsconfig.spec.json",
+            "karmaConfig": "apps/mat-pc/karma.conf.js",
+            "styles": ["apps/mat-pc/src/styles.scss"],
+            "scripts": [],
+            "assets": ["apps/mat-pc/src/favicon.ico", "apps/mat-pc/src/assets"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/mat-pc/tsconfig.app.json",
+              "apps/mat-pc/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "mat-pc-e2e": {
+      "root": "apps/mat-pc-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/mat-pc-e2e/protractor.conf.js",
+            "devServerTarget": "mat-pc:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mat-pc:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/mat-pc-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "nebular": {
+      "root": "libs/nebular",
+      "sourceRoot": "libs/nebular/src",
+      "projectType": "library",
+      "prefix": "workspace",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/nebular/src/test.ts",
+            "tsConfig": "libs/nebular/tsconfig.spec.json",
+            "karmaConfig": "libs/nebular/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nebular/tsconfig.lib.json",
+              "libs/nebular/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

@@ -1,0 +1,1 @@
+export { NebularModule } from './lib/nebular.module';

@@ -1,48 +1,48 @@
-<mat-card class="detail-card">
-  <mat-card-header>
-    <mat-card-title
+<nb-card class="detail-card">
+  <nb-card-header>
+    <nb-card-title
       >{{ (selectedCoffee?.flavor || 'Add Coffee') | titlecase }}
-    </mat-card-title>
-    <mat-card-subtitle>{{ (selectedCoffee?.type) || 'N/A' | titlecase }}</mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
+    </nb-card-title>
+    <nb-card-subtitle>{{ (selectedCoffee?.type) || 'N/A' | titlecase }}</nb-card-subtitle>
+  </nb-card-header>
+  <nb-card-content>
     <form [formGroup]="coffeeForm" class="detail-form">
-      <mat-form-field>
+      <nb-form-field>
         <input matInput placeholder="Coffee Flavor" formControlName="flavor" />
-        <mat-error *ngIf="formFieldValidator('flavor')">{{ coffeeFormErrors.flavor }}</mat-error>
-      </mat-form-field>
+        <nb-error *ngIf="formFieldValidator('flavor')">{{ coffeeFormErrors.flavor }}</nb-error>
+      </nb-form-field>
 
-      <mat-form-field>
-        <mat-select formControlName="type" placeholder="Type">
-            <mat-option *ngFor="let type of typeOptions" [value]="type">
+      <nb-form-field>
+        <nb-select formControlName="type" placeholder="Type">
+            <nb-option *ngFor="let type of typeOptions" [value]="type">
                 {{ (type) | titlecase }}
-            </mat-option>
-        </mat-select>
-        <mat-error *ngIf="formFieldValidator('type')">{{ coffeeFormErrors.type }}</mat-error>
-      </mat-form-field>
+            </nb-option>
+        </nb-select>
+        <nb-error *ngIf="formFieldValidator('type')">{{ coffeeFormErrors.type }}</nb-error>
+      </nb-form-field>
 
-      <mat-form-field>
-        <mat-select formControlName="style" placeholder="Style">
-            <mat-option *ngFor="let style of styleOptions" [value]="style">
+      <nb-form-field>
+        <nb-select formControlName="style" placeholder="Style">
+            <nb-option *ngFor="let style of styleOptions" [value]="style">
                 {{ (style) | titlecase }}
-            </mat-option>
-        </mat-select>
-        <mat-error *ngIf="formFieldValidator('style')">{{ coffeeFormErrors.style }}</mat-error>
-      </mat-form-field>
+            </nb-option>
+        </nb-select>
+        <nb-error *ngIf="formFieldValidator('style')">{{ coffeeFormErrors.style }}</nb-error>
+      </nb-form-field>
 
-      <mat-form-field>
-        <mat-select formControlName="size" placeholder="Size">
-            <mat-option *ngFor="let size of sizeOptions" [value]="size">
+      <nb-form-field>
+        <nb-select formControlName="size" placeholder="Size">
+            <nb-option *ngFor="let size of sizeOptions" [value]="size">
                 {{ (size) | titlecase }}
-            </mat-option>
-        </mat-select>
-        <mat-error *ngIf="formFieldValidator('size')">{{ coffeeFormErrors.size }}</mat-error>
-      </mat-form-field>
+            </nb-option>
+        </nb-select>
+        <nb-error *ngIf="formFieldValidator('size')">{{ coffeeFormErrors.size }}</nb-error>
+      </nb-form-field>
     </form>
-  </mat-card-content>
-  <mat-card-actions align="start" class="detail-actions">
-    <button mat-button (click)="saveCoffee()" [disabled]="!coffeeForm.valid">Save</button>
-    <button mat-button (click)="cancel()">Cancel</button>
-    <button mat-button (click)="deleted.emit(selectedCoffee)"[disabled]="!coffeeForm.valid">Delete</button>
-  </mat-card-actions>
-</mat-card>
+  </nb-card-content>
+  <nb-card-actions align="start" class="detail-actions">
+    <button nb-button (click)="saveCoffee()" [disabled]="!coffeeForm.valid">Save</button>
+    <button nb-button (click)="cancel()">Cancel</button>
+    <button nb-button (click)="deleted.emit(selectedCoffee)"[disabled]="!coffeeForm.valid">Delete</button>
+  </nb-card-actions>
+</nb-card>

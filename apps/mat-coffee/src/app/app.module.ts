@@ -14,7 +14,13 @@ import { MaterialModule } from '@workspace/material';
 import { CoreStateModule } from '@workspace/core-state';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CoffeeComponent, CoffeeListComponent, CoffeeDetailComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    CoffeeComponent,
+    CoffeeListComponent,
+    CoffeeDetailComponent
+  ],
   imports: [
     BrowserModule,
     NxModule.forRoot(),

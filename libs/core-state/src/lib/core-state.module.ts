@@ -26,15 +26,48 @@ import { InventoryStateModule } from 'libs/core-state/src/lib/inventory-state/in
 import { InventoryService } from 'libs/core-data/src/lib/services/inventory.service';
 import { TicketStateModule } from 'libs/core-state/src/lib/ticket-state/ticket-state.module';
 import { TicketService } from 'libs/core-data/src/lib/services/ticket.service';
-import { CoffeeStateModule } from 'libs/core-state/src/lib/coffee-state/coffee-state.module';
-import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
 import { SmoothieStateModule } from 'libs/core-state/src/lib/smoothie-state/smoothie-state.module';
 import { SmoothieService } from 'libs/core-data/src/lib/services/smoothie.service';
 import { PcpartStateModule } from 'libs/core-state/src/lib/pcpart-state/pcpart-state.module';
 import { PcpartService } from 'libs/core-data/src/lib/services/pcpart.service';
+import { CoffeeStateModule } from 'libs/core-state/src/lib/coffee-state/coffee-state.module';
+import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
 
 @NgModule({
-  imports: [CommonModule, PlayerStateModule, BurgerStateModule, CheeseStateModule, TacoStateModule, CharacterStateModule, SpotifyStateModule, AmiiboStateModule, PokemonStateModule, MovieStateModule, SpacexStateModule, VenturplexStateModule, InventoryStateModule, TicketStateModule, CoffeeStateModule, SmoothieStateModule, PcpartStateModule],
-  providers: [PlayerService, BurgerService, TacoService, AsoiafService, SpotifyAuthService, AmiiboService, PokemonService, MovieService, VenturplexService, InventoryService, TicketService, CoffeeService, PcpartService]
+  imports: [
+    CommonModule,
+    PlayerStateModule,
+    BurgerStateModule,
+    CheeseStateModule,
+    TacoStateModule,
+    CharacterStateModule,
+    SpotifyStateModule,
+    AmiiboStateModule,
+    PokemonStateModule,
+    MovieStateModule,
+    SpacexStateModule,
+    VenturplexStateModule,
+    InventoryStateModule,
+    TicketStateModule,
+    SmoothieStateModule,
+    PcpartStateModule,
+    CoffeeStateModule,
+  ],
+  providers: [
+    PlayerService,
+    BurgerService,
+    TacoService,
+    AsoiafService,
+    SpotifyAuthService,
+    AmiiboService,
+    PokemonService,
+    MovieService,
+    VenturplexService,
+    InventoryService,
+    TicketService,
+    SmoothieService,
+    PcpartService,
+    CoffeeService,
+  ]
 })
 export class CoreStateModule {}

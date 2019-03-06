@@ -6,7 +6,8 @@ import { Coffee } from '@workspace/core-data';
   providedIn: 'root'
 })
 export class CoffeeService {
-  baseUrl: String = 'https://coffee-api-rauitffewn.now.sh';
+  baseUrl: String = 'http://localhost:3000';
+  // baseUrl: String = 'https://coffee-api-rauitffewn.now.sh';
 
   constructor(private http: HttpClient) { }
 
@@ -15,7 +16,7 @@ export class CoffeeService {
   }
 
   createCoffee(coffee) {
-    return this.http.post<Coffee>(`${this.baseUrl}/coffees`, coffee);
+    return this.http.post<Coffee>(`${this.baseUrl}/coffee`, coffee);
   }
   
   updateCoffee(coffee) {

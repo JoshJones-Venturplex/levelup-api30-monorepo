@@ -58,7 +58,8 @@ export class CoffeeDetailComponent implements OnChanges {
 
   saveCoffee() {
     this.saved.emit({
-      ...this.coffeeForm.value
+      ...this.coffeeForm.value,
+      id: this.selectedCoffee.id
     });
     this.coffeeForm.reset();
   }

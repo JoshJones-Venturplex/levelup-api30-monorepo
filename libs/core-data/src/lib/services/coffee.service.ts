@@ -7,6 +7,7 @@ import { Coffee } from '@workspace/core-data';
 })
 export class CoffeeService {
   baseUrl: String = 'http://localhost:3000';
+  // baseUrl: String = 'https://coffee-nest-nzqoorqgsv.now.sh';
   // baseUrl: String = 'https://coffee-api-rauitffewn.now.sh';
 
   constructor(private http: HttpClient) { }

@@ -49,9 +49,9 @@ import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
     VenturplexStateModule,
     InventoryStateModule,
     TicketStateModule,
-    SmoothieStateModule,
     PcpartStateModule,
     CoffeeStateModule,
+    SmoothieStateModule,
   ],
   providers: [
     PlayerService,
@@ -65,9 +65,9 @@ import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
     VenturplexService,
     InventoryService,
     TicketService,
-    SmoothieService,
     PcpartService,
     CoffeeService,
+    SmoothieService,
   ]
 })
 export class CoreStateModule {}

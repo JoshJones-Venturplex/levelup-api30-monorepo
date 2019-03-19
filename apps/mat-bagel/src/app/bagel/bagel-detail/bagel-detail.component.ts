@@ -47,7 +47,7 @@ export class BagelDetailComponent implements OnChanges {
       flavor: [this.selectedBagel ? this.selectedBagel.flavor : '', Validators.required],
       spread: [this.selectedBagel ? this.selectedBagel.spread : '', Validators.required],
       addons: [this.selectedBagel ? this.selectedBagel.addons : '', Validators.required],
-      toasted: [this.selectedBagel ? this.selectedBagel.addons : ''],
+      toasted: [this.selectedBagel ? this.selectedBagel.toasted : false],
       calories: [this.selectedBagel ? this.selectedBagel.calories : '', Validators.required]
     });
   }

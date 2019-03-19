@@ -18,4 +18,5 @@ export { TicketsFacade } from './lib/ticket-state/ticket/ticket.facade';
 export { PcpartsFacade } from './lib/pcpart-state/pcpart/pcpart.facade';
 export { CoffeesFacade } from './lib/coffee-state/coffee/coffee.facade';
 export { SmoothiesFacade } from './lib/smoothie-state/smoothie/smoothie.facade';
+export { BagelsFacade } from './lib/bagel-state/bagel/bagel.facade';
 //export { AuthState } from './lib/spotify-state/spotify-state.module'

@@ -172,6 +172,12 @@
     },
     "nebular": {
       "tags": []
+    },
+    "mat-bagel": {
+      "tags": []
+    },
+    "mat-bagel-e2e": {
+      "tags": []
     }
   }
 }

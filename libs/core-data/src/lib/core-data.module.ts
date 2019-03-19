@@ -38,6 +38,8 @@ import { Smoothie } from './interfaces/smoothie';
 import { SmoothieService } from './services/smoothie.service';
 import { Pcpart } from './interfaces/pcpart';
 import { PcpartService } from './services/pcpart.service';
+import { Bagel } from './interfaces/bagel';
+import { BagelService } from './services/bagel.service';
 @NgModule({
   imports: [CommonModule],
   providers: [FruitService]

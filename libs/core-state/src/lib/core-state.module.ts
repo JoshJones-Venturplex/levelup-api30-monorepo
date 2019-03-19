@@ -32,6 +32,8 @@ import { PcpartStateModule } from 'libs/core-state/src/lib/pcpart-state/pcpart-s
 import { PcpartService } from 'libs/core-data/src/lib/services/pcpart.service';
 import { CoffeeStateModule } from 'libs/core-state/src/lib/coffee-state/coffee-state.module';
 import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
+import { BagelStateModule } from 'libs/core-state/src/lib/bagel-state/bagel-state.module';
+import { BagelService } from 'libs/core-data/src/lib/services/bagel.service';
 
 @NgModule({
   imports: [
@@ -52,6 +54,7 @@ import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
     PcpartStateModule,
     CoffeeStateModule,
     SmoothieStateModule,
+    BagelStateModule
   ],
   providers: [
     PlayerService,
@@ -68,6 +71,7 @@ import { CoffeeService } from 'libs/core-data/src/lib/services/coffee.service';
     PcpartService,
     CoffeeService,
     SmoothieService,
+    BagelService
   ]
 })
 export class CoreStateModule {}

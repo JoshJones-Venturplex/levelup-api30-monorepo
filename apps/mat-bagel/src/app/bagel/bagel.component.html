@@ -1,0 +1,18 @@
+<div class="loader">
+  <mat-progress-bar *ngIf="loading | async" mode="indeterminate"></mat-progress-bar>
+</div>
+<div class="card-container">
+  <workspace-bagel-list
+    [bagels]="bagels$ | async"
+    (bagelSelected)="selectBagel($event)"
+    (reset)="resetCurrentBagel()"
+  >
+  </workspace-bagel-list>
+  <workspace-bagel-detail
+    [selectedBagel]="currentBagel$ | async"
+    (saved)="saveBagel($event)"
+    (canceled)="resetCurrentBagel()"
+    (deleted)="deleteBagel($event)"
+  >
+  </workspace-bagel-detail>
+</div>

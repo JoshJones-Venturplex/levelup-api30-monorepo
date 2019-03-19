@@ -37,3 +37,5 @@ export { Smoothie } from './lib/interfaces/smoothie';
 export { SmoothieService } from './lib/services/smoothie.service';
 export { Pcpart } from './lib/interfaces/pcpart';
 export { PcpartService } from './lib/services/pcpart.service';
+export { Bagel } from './lib/interfaces/bagel';
+export { BagelService } from './lib/services/bagel.service';
